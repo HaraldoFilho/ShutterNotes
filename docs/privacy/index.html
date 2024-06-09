@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="title"></title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="res/strings_en-us.js"></script>
+  <script src="res/strings_pt-br.js"></script>
+</head>
+<body>
+
+<h1 id="h1"></h1>
+<div id="text"></div>
+
+<script>
+
+  var userLang = navigator.language || navigator.userLanguage;
+  console.log ("User language is: " + userLang);
+
+  if (userLang == 'pt-BR') {
+    document.getElementById('title').innerText = title_pt_br;
+    document.getElementById('h1').innerHTML = title_pt_br;
+    document.getElementById('text').innerHTML = text_pt_br;
+  } else {
+    document.getElementById('title').innerText = title_en_us;
+    document.getElementById('h1').innerHTML = title_en_us;
+    document.getElementById('text').innerHTML = text_en_us;
+  }
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/about_layout_margin"
+
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/dialog_view_title"
+        android:id="@+id/txtTitle"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <View android:layout_height="1px"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/txtTitle"
+        android:background="#90909090"
+        android:layout_marginLeft="@dimen/about_layout_margin"
+        android:layout_marginRight="@dimen/about_layout_margin"
+        android:id="@+id/separator" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/separator">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/about_layout_margin"
+            android:text="@string/dialog_view_text"
+            android:id="@+id/txtText" />
+
+    </ScrollView>
+
+</RelativeLayout>

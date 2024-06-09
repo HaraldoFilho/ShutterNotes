@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <Button
+        android:id="@+id/buttonSimpleNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_main_margin"
+        android:layout_marginTop="@dimen/button_main_margin"
+        android:layout_marginRight="@dimen/button_main_margin"
+        android:layout_marginBottom="@dimen/button_main_margin"
+        android:layout_weight="1"
+        android:background="@drawable/img_simple_note_button"
+        android:contentDescription="@string/button_simple"
+        android:scaleType="centerCrop"
+        android:text="@string/button_simple"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="@dimen/button_main_text_size"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonGearNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_main_margin"
+        android:layout_marginRight="@dimen/button_main_margin"
+        android:layout_marginBottom="@dimen/button_main_margin"
+        android:layout_weight="1"
+        android:background="@drawable/img_gear_note_button"
+        android:contentDescription="@string/button_gear"
+        android:scaleType="centerCrop"
+        android:text="@string/button_gear"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="@dimen/button_main_text_size"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonFlickrNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_main_margin"
+        android:layout_marginRight="@dimen/button_main_margin"
+        android:layout_marginBottom="@dimen/button_main_margin"
+        android:layout_weight="1"
+        android:background="@drawable/img_flickr_note_button"
+        android:contentDescription="@string/button_flickr"
+        android:scaleType="centerCrop"
+        android:text="@string/button_flickr"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="@dimen/button_main_text_size"
+        android:textStyle="bold" />
+
+</LinearLayout>

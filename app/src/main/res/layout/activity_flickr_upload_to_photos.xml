@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundPhotos"
+    tools:context=".FlickrUploadToPhotosActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/progressBarView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/progress_bar_view_padding" >
+
+        <TextView
+            android:id="@+id/progressBarTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/progress_bar_title_padding_bottom"
+            android:text="@string/title_progress_upload_data"
+            android:textSize="@dimen/progress_bar_title_text_size" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/progressRatio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/progress_ratio_padding_top"
+            android:textAlignment="textEnd" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/photosList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/flickr_upload_photos_margin"
+        android:layout_marginRight="@dimen/flickr_upload_photos_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/flickr_upload_photos_div_height"/>
+
+</RelativeLayout>

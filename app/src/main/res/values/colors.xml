@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Color pallete-->
+    <color name="colorPrimary">#148E02</color>
+    <color name="colorPrimaryDark">#135C04</color>
+    <color name="colorAccent">#148E02</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorRed">#ff0000</color>
+    <color name="colorGreen">#01BF01</color>
+    <color name="colorYellow">#f7b10f</color>
+
+    <!--Tile colors-->
+    <color name="colorTileBackground">#01BF01</color>
+    <color name="colorTileSelected">#ff0000</color>
+
+    <!--Text colors-->
+    <color name="colorBlackText">#000000</color>
+    <color name="colorGreyText">#717171</color>
+    <color name="colorWhiteText">#ffffff</color>
+
+    <!--Background colors-->
+    <color name="colorBackgroundGreen">#01B14A</color>
+    <color name="colorBackgroundLightGreen">#69FF5F</color>
+    <color name="colorBackgroundDarkGreen">#135C04</color>
+    <color name="colorBackgroundRed">#fa0c0c</color>
+    <color name="colorBackgroundPink">#DC0786</color>
+    <color name="colorBackgroundBlue">#062BB1</color>
+    <color name="colorBackgroundWhite">#ffffff</color>
+    <color name="colorBackgroundLightGrey">#CCE4CC</color>
+    <color name="colorBackgroundTags">#f7f7f7</color>
+    <color name="colorBackgroundGearNote">#f7f7f7</color>
+    <color name="colorBackgroundPhotosets">#f7f7f7</color>
+    <color name="colorBackgroundPhotos">#f7f7f7</color>
+    <color name="colorBackgroudSplash">#ffffff</color>
+
+    <color name="black_overlay">#66000000</color>
+
+</resources>

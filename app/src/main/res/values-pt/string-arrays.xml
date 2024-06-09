@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Settings -->
+
+
+    <!-- GENERAL SETTINGS group -->
+
+    <!-- Font size -->
+    <string-array name="pref_font_size_titles">
+        <item>Grande</item>
+        <item>Média</item>
+        <item>Pequena</item>
+    </string-array>
+
+    <string-array name="pref_font_size_entry_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+    </string-array>
+
+
+    <!-- FLICKR NOTES group -->
+
+    <!-- What to show on fullscreen note -->
+    <string-array name="pref_what_show_titles">
+        <item>Título</item>
+        <item>Descrição</item>
+        <item>Tags</item>
+    </string-array>
+
+    <string-array name="pref_what_show_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <!-- Map zoom levels -->
+    <string-array name="pref_map_zoom_level_titles">
+        <item>Alto</item>
+        <item>Médio</item>
+        <item>Baixo</item>
+        <item>Nenhum</item>
+    </string-array>
+
+    <string-array name="pref_map_zoom_level_entry_values">
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!-- Overwrite tags -->
+    <string-array name="pref_overwrite_tags_titles">
+        <item>Substituir tudo</item>
+        <item>Inserir antes</item>
+        <item>Inserir depois</item>
+    </string-array>
+
+    <string-array name="pref_overwrite_tags_entry_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+</resources>

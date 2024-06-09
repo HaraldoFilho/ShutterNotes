@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ContentDescription"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_tile"
+    android:elevation="@dimen/flickr_photoset_item_elevation">
+
+    <ImageView
+        android:id="@+id/imagePhotosetCover"
+        android:layout_width="@dimen/flickr_photoset_thumb_size"
+        android:layout_height="@dimen/flickr_photoset_thumb_size"
+        android:layout_marginEnd="@dimen/item_margin" />
+
+    <LinearLayout
+        android:id="@+id/layoutPhotosetText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toEndOf="@id/imagePhotosetCover">
+
+        <TextView
+            android:id="@+id/textPhotosetTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/flickr_photoset_title_size"
+            android:layout_marginTop="@dimen/item_margin"
+            android:layout_marginEnd="@dimen/item_text_margin_right" />
+
+        <TextView
+            android:id="@+id/textPhotosetSize"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/flickr_photoset_number_size"
+            android:layout_marginEnd="@dimen/item_text_margin_right" />
+
+    </LinearLayout>
+
+</RelativeLayout>

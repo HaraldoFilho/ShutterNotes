@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundGearNote"
+    tools:context=".GearNoteActivity">
+
+    <ListView
+        android:id="@+id/gearList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonsGearNote"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/gear_note_item_margin"
+        android:layout_marginRight="@dimen/gear_note_item_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/gear_note_item_spacing">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/buttonsGearNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@color/colorBackgroundWhite">
+
+        <Button
+            android:id="@+id/buttonGearNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/button_cancel"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
+            android:id="@+id/buttonGearNoteReset"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/button_reset"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
+            android:id="@+id/buttonGearNoteOk"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/colorPrimary"
+            android:text="@string/button_show"
+            android:textSize="@dimen/button_font_size" />
+    </LinearLayout>
+
+
+</RelativeLayout>

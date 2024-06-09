@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!--
+     The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+     Google Maps Android API v2, but you must specify either coarse or fine
+     location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed to Android 5.0 (API level 21) or higher. -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.network" />
+    <!--
+         The Maps API requires the additional following permissions to be set
+         in the AndroidManifest.xml to ensure a correct behavior
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Necessary to connect to Flickr account -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/info_app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" /> <!-- Google Maps-based APIs Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/info_app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SimpleNoteActivity"
+            android:label="@string/activity_title_simple_note" />
+        <activity
+            android:name=".GearNoteActivity"
+            android:label="@string/activity_title_gear_note" />
+        <activity
+            android:name=".FlickrNoteActivity"
+            android:label="@string/activity_title_flickr_note" />
+        <activity
+            android:name=".SimpleNotesListActivity"
+            android:label="@string/activity_title_simple_notes"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GearNotesListActivity"
+            android:label="@string/activity_title_gear_notes"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FlickrNotesListActivity"
+            android:label="@string/activity_title_flickr_notes"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FlickrPhotosetsListActivity"
+            android:label="@string/activity_title_flickr_photosets"
+            android:parentActivityName=".FlickrNotesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FlickrUploadToPhotosActivity"
+            android:label="@string/activity_title_flickr_upload"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReturnToForegroundActivity" />
+        <activity
+            android:name=".FlickrPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ArchiveActivity"
+            android:label="@string/activity_title_archive"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FullscreenNoteActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/activity_title_note_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".FlickrAccountActivity"
+            android:label="@string/activity_title_flickr_connect"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ClockActivity"
+            android:label="@string/activity_title_clock"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/activity_title_settings"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpActivity"
+            android:label="@string/activity_title_help"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/activity_title_about"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FeedbackActivity"
+            android:label="@string/action_feedback"
+            android:parentActivityName=".AboutActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

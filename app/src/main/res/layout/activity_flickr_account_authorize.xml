@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    tools:context=".FlickrAccountActivity">
+
+
+    <WebView
+        android:id="@+id/webViewFlickrAuth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/inputTextFlickrAuth"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:id="@+id/inputTextFlickrAuth"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_text_height"
+        android:layout_above="@+id/authButtonFlickrAuth"
+        android:layout_marginLeft="@dimen/item_margin"
+        android:layout_marginTop="@dimen/item_margin"
+        android:layout_marginRight="@dimen/item_margin"
+        android:autofillHints=""
+        android:clickable="true"
+        android:ems="10"
+        android:focusable="true"
+        android:hint="@string/text_type_code"
+        android:inputType="number|textCapCharacters"
+        android:textAlignment="center"
+        tools:targetApi="o" />
+
+    <Button
+        android:id="@+id/authButtonFlickrAuth"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/item_margin"
+        android:layout_marginTop="@dimen/item_margin"
+        android:layout_marginEnd="@dimen/item_margin"
+        android:layout_marginBottom="@dimen/item_margin"
+        android:background="@color/colorBackgroundRed"
+        android:text="@string/button_connect"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhiteText"
+        android:textSize="@dimen/button_font_size"
+        android:textStyle="bold" />
+
+</RelativeLayout>

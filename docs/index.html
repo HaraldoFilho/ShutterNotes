@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shutter Notes | Haraldo Albergaria</title>
+  <meta charset="UTF-8"/>
+  <link rel="shortcut icon" type="image/x-icon" href="res/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="res/en-us/strings.js"></script>
+  <script src="res/pt-br/strings.js"></script>
+</head>
+
+<body>
+
+  <div class="grid-container">
+
+    <div class="header">
+      <p class="title">
+
+      <!-- app name -->
+      Shutter Notes
+
+      </p>
+    </div>
+
+    <div id="main" class="main">
+
+      <img id="banner" alt="banner" />
+      <br>
+      <div id="description"></div>
+
+    </div>
+
+    <div id="panel" class="panel">
+      <img id="phone" alt="Phone" />
+      <br>
+
+      <!-- google play app link -->
+      <a href="https://play.google.com/store/apps/details?id=com.apps.mohb.shutternotes" target="_blank">
+        <img id="google-play"/></a>
+
+    </div>
+
+    <div id="footer" class="footer"></div>
+
+  </div>
+
+  <script>
+
+    var userLang = navigator.language || navigator.userLanguage;
+    console.log ("User language is: " + userLang);
+
+    if (userLang == 'pt-BR') {
+      document.getElementById('description').innerHTML = description_pt_br;
+      document.getElementById('footer').innerHTML = footer_pt_br;
+      document.getElementById('banner').setAttribute('src', 'res/pt-br/images/banner.png');
+      document.getElementById('phone').setAttribute('src', 'res/pt-br/images/phone.png');
+      document.getElementById('google-play').setAttribute('src', 'https://play.google.com/intl/en_us/badges/static/images/badges/pt-br_badge_web_generic.png');
+      document.getElementById('google-play').setAttribute('alt', 'Disponível no Google Play');
+      document.getElementById('google-play').setAttribute('style', 'width:185px')
+    } else {
+      document.getElementById('description').innerHTML = description_en_us;
+      document.getElementById('footer').innerHTML = footer_en_us;
+      document.getElementById('banner').setAttribute('src', 'res/en-us/images/banner.png');
+      document.getElementById('phone').setAttribute('src', 'res/en-us/images/phone.png');
+      document.getElementById('google-play').setAttribute('src', 'https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png');
+      document.getElementById('google-play').setAttribute('alt', 'Get It on Google Play');
+      document.getElementById('google-play').setAttribute('style', 'width:210px')
+    }
+
+  </script>
+
+  </body>
+  </html>

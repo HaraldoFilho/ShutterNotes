@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--Application name-->
+    <string name="app_name" translatable="false">Shutter Notes</string>
+
+    <!--Application version-->
+    <string name="version_name">version: </string>
+    <string name="version_number" translatable="false">1.0.0</string>
+    <string name="version_code" translatable="false">100</string>
+
+    <!--Application information-->
+    <string name="info_app_name" translatable="false">Shutter Notes</string>
+    <string name="info_name" translatable="false">Haraldo Albergaria</string>
+    <string name="info_website">haraldoalbergaria.page</string>
+    <string name="info_feedback_email" translatable="false">mohb.apps@gmail.com</string>
+    <string name="info_bug_email" translatable="false">mohb.apps@gmail.com</string>
+    <string name="info_developer">Developer:</string>
+    <string name="info_developer_name" translatable="false">Haraldo Albergaria</string>
+    <string name="info_copyright_text" translatable="false">Copyright © 2024 Haraldo Albergaria</string>
+    <string name="info_rights_reserved_text">All Rights Reserved.</string>
+
+    <!--Content description-->
+    <string name="cont_desc_app_icon" translatable="false">app icon</string>
+    <string name="cont_desc_mohb_logo" translatable="false">mohb logo</string>
+
+    <!--Navigation drawer-->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Haraldo Albergaria</string>
+    <string name="nav_header_subtitle">mohb.apps@gmail.com</string>
+    <string name="nav_header_desc">ShutterNotes</string>
+    <string name="nav_menu_simple">Simple Notes</string>
+    <string name="nav_menu_gear">Gear Notes</string>
+    <string name="nav_menu_flickr">Flickr Notes</string>
+    <string name="nav_menu_archive">Archived</string>
+    <string name="nav_menu_account">Flickr Account</string>
+    <string name="nav_menu_clock">Synchronize Clocks</string>
+    <string name="nav_menu_settings">Settings</string>
+    <string name="nav_menu_help">Help</string>
+    <string name="nav_menu_about">About</string>
+
+    <!--Bottom navigation menu-->
+    <string name="bot_nav_menu_simple">Simple</string>
+    <string name="bot_nav_menu_gear">Gear</string>
+    <string name="bot_nav_menu_flickr" translatable="false">Flickr</string>
+
+    <!--Buttons-->
+    <string name="button_simple">SIMPLE</string>
+    <string name="button_gear">GEAR</string>
+    <string name="button_flickr" translatable="false">FLICKR</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_clear">Clear</string>
+    <string name="button_reset">Reset</string>
+    <string name="button_show">Show</string>
+    <string name="button_ok" translatable="false">OK</string>
+    <string name="button_exit">Exit</string>
+    <string name="button_save">Save</string>
+    <string name="button_connect">Connect Account</string>
+    <string name="button_connected">Account Connected</string>
+    <string name="button_connecting">Connecting to Flickr account…</string>
+
+    <!--Activities titles-->
+    <string name="activity_title_simple_notes">Simple Notes</string>
+    <string name="activity_title_gear_notes">Gear Notes</string>
+    <string name="activity_title_flickr_notes">Flickr Notes</string>
+    <string name="activity_title_archive">Archived</string>
+    <string name="activity_title_simple_note">Simple Note</string>
+    <string name="activity_title_gear_note">Gear Note</string>
+    <string name="activity_title_add_tags">Add Tags</string>
+    <string name="activity_title_gears_list">Acessories</string>
+    <string name="activity_title_flickr_note">Flickr Note</string>
+    <string name="activity_title_simple_note_fullscreen">Simple Note Fullscreen</string>
+    <string name="activity_title_gear_note_fullscreen">Gear Note Fullscreen</string>
+    <string name="activity_title_flickr_note_fullscreen">Flickr Note Fullscreen</string>
+    <string name="activity_title_note_fullscreen">Note Fullscreen</string>
+    <string name="activity_title_settings">Settings</string>
+    <string name="activity_title_help">Help</string>
+    <string name="activity_title_about">About</string>
+    <string name="activity_title_flickr_connect">Connect Flickr account</string>
+    <string name="activity_title_flickr_photosets">Choose photoset</string>
+    <string name="activity_title_flickr_upload">Upload to Flickr</string>
+    <string name="activity_title_clock">Clock</string>
+
+    <string name="action_send_feedback">Send feedback</string>
+    <string name="action_send_question">Send question</string>
+    <string name="action_report_bug">Report a bug</string>
+    <string name="action_terms_of_use">Terms of use</string>
+    <string name="action_privacy_policy">Privacy policy</string>
+    <string name="action_material_icons">Graphical resources attribution</string>
+    <string name="action_website">Website</string>
+    <string name="action_feedback">Feedback</string>
+    <string name="action_question">Question</string>
+    <string name="action_bug_report">Bug in application</string>
+    <string name="action_about_application">about application</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_add_gear">Add new gearItem</string>
+    <string name="action_select_all">Select all</string>
+    <string name="action_unselect_all">Unselect all</string>
+    <string name="action_delete_all">Delete all</string>
+    <string name="action_reorder">Reorder</string>
+    <string name="action_archive_all">Archive all</string>
+    <string name="action_restore_all">Restore all</string>
+    <string name="action_upload_to_flickr">Upload to Flickr</string>
+    <string name="action_restore_defaults">Restore defaults</string>
+    <string name="action_sync_clock">Syncronize clock</string>
+    <string name="action_update_location">Update location</string>
+    <string name="action_help">Help</string>
+
+    <string name="context_archive">Archive</string>
+    <string name="context_restore">Restore</string>
+    <string name="context_delete">Delete</string>
+    <string name="context_edit">Edit</string>
+
+    <!--Text Views-->
+    <string name="text_hint_simple_note">Write your note here</string>
+    <string name="text_hint_gear_note_title">Type here the title</string>
+    <string name="text_list_gear_note_item">Accessory</string>
+    <string name="text_hint_flickr_note_title">Type here the title</string>
+    <string name="text_hint_flickr_note_description">Write here the description</string>
+    <string name="text_type_code">Type the code here</string>
+    <string name="text_photo">photo</string>
+    <string name="text_photo_cl">Photo</string>
+    <string name="text_s">s</string>
+    <string name="text_syncronize_clock">SYNCHRONIZE YOUR CAMERA CLOCK</string>
+
+    <!--Dialogs-->
+    <string name="dialog_view_title">Title</string>
+    <string name="dialog_view_text">text</string>
+    <string name="dialog_add_gear_title">New Accessory</string>
+    <string name="dialog_edit_gear_title">Edit Accessory</string>
+    <string name="title_progress_upload_data">Adding data to photos…</string>
+    <string name="title_progress_photosets">Loading photosets…</string>
+    <string name="dialog_warning_title">Important warning!</string>
+    <string name="dialog_instruction_title">Instructions</string>
+    <string name="dialog_warning_flickr_note_message">Before create your Flickr notes, do not forget to synchronize your camera and smartphone clocks</string>
+    <string name="dialog_instruction_fullscreen_message">Take a picture of the green screen to mark the start of the photo sequence. After finish, long click the screen to turn it red and take a picture to mark the end of the sequence. Finally, long click the screen again to exit.</string>
+    <string name="dialog_warning_button_ok">OK, I understand</string>
+    <string name="alert_title_delete_gear">Delete accessory?</string>
+    <string name="alert_title_delete_note">Delete note?</string>
+    <string name="alert_title_delete_all_notes">Delete all notes?</string>
+    <string name="alert_title_archive_all_notes">Archive all notes?</string>
+    <string name="alert_title_archive_selected_notes">Archive selected notes?</string>
+    <string name="alert_title_restore_all_notes">Restore all notes?</string>
+    <string name="alert_title_delete_all_items">Delete all?</string>
+    <string name="alert_title_reset_preferences">Restore defaults?</string>
+    <string name="alert_title_confirm_upload">Confirm upload?</string>
+    <string name="alert_title_run_background">Continue in background</string>
+    <string name="alert_title_authenticate">Authentication needed!</string>
+    <string name="alert_message_reset_preferences">All settings will be restored to the default values\n</string>
+    <string name="alert_message_no_undone">This action can not be undone\n</string>
+    <string name="alert_message_can_be_restored">They will can be restored later\n</string>
+    <string name="alert_message_delete_all_notes">All notes will be permanently deleted\n</string>
+    <string name="alert_message_restore_all_notes">All notes will be restored to its original location\n</string>
+    <string name="alert_message_confirm_upload">The notes information will be uploaded to the selected photoset. AFTER STARTED, THIS OPERATION WILL CAN NOT BE CANCELED!</string>
+    <string name="alert_message_run_background">Do you want to continue the upload in background? You will be notified when it is finished\n</string>
+    <string name="alert_message_authenticate">You need to authenticate in your Flickr account to upload data. Do you want to try again?</string>
+    <string name="alert_button_no">No</string>
+    <string name="alert_button_yes">Yes</string>
+
+    <!--Toasts-->
+    <string name="toast_get_help_page">Loading help page from internet…</string>
+    <string name="toast_must_type">You need to type something here</string>
+    <string name="toast_must_type_title">You need to type a title</string>
+    <string name="toast_must_pickup">Choose at least one accessory</string>
+    <string name="toast_must_select">Select at least one note</string>
+    <string name="toast_reordered">The items were reordered</string>
+    <string name="toast_all_notes_archived">All notes were archived</string>
+    <string name="toast_selected_notes_archived">The selected notes were archived</string>
+    <string name="toast_all_notes_restored">All notes were restored</string>
+    <string name="toast_type_code">You need to type the code</string>
+    <string name="toast_wrong_code">Wrong code, try again</string>
+    <string name="toast_account_connected">Account connected!</string>
+    <string name="toast_unable_to_communicate">Unable to communicate with Flickr</string>
+    <string name="toast_location_updated">Location updated!</string>
+    <string name="toast_location_not_updated">Unable to update location</string>
+
+    <!-- Notification -->
+    <string name="notify_channel_name">Upload to Flickr</string>
+    <string name="notify_channel_description">Shows the upload progress and re-open the app if clicked</string>
+    <string name="notify_upload_completed">Upload completed!</string>
+    <string name="notify_title">Uploading to Flickr…</string>
+    <string name="notify_no_photos_updated">No photos were updated</string>
+    <string name="notify_photo">photo</string>
+    <string name="notify_s">s</string>
+    <string name="notify_end_s" />
+    <string name="notify_was">was</string>
+    <string name="notify_were">were</string>
+    <string name="notify_updated">updated</string>
+
+    <!--Help pages-->
+    <string name="url_website" translatable="false">https://haraldoalbergaria.page/apps/shutter-notes</string>
+    <string name="url_help">help</string>
+    <string name="url_help_simple_note">shutternotes-help-simplenote</string>
+    <string name="url_help_gear_note">shutternotes-help-gearnote</string>
+    <string name="url_help_flickr_note">shutternotes-help-flicknote</string>
+    <string name="url_help_simple_notes">shutternotes-help-simplenotes</string>
+    <string name="url_help_gear_notes">shutternotes-help-gearnotes</string>
+    <string name="url_help_flickr_notes">shutternotes-help-flickrnotes</string>
+    <string name="url_help_archived">shutternotes-help-archived</string>
+    <string name="url_help_settings">shutternotes-help-settings</string>
+    <string name="url_contact">contact</string>
+    <string name="url_bug_report">bug-report</string>
+
+    <string name="dummy_button" translatable="false">Dummy Button</string>
+    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+
+    <!-- Settings -->
+
+    <!-- GENERAL SETTINGS group -->
+    <string name="pref_group_general_settings_key" translatable="false">GENERAL_SETTINGS_KEY</string>
+    <string name="pref_group_general_settings">GENERAL SETTINGS</string>
+
+    <!-- Font Size -->
+    <string name="pref_key_font_size" translatable="false">FONT_SIZE</string>The location information will be uploaded to Flickr
+    <string name="pref_title_font_size">Font size</string>
+    <string name="pref_def_font_size" translatable="false">2</string>
+
+    <!-- Notification sound -->
+    <string name="pref_key_notif_sound" translatable="false">NOTIF_SOUND</string>
+    <string name="pref_title_notif_sound">Notification sound</string>
+    <string name="pref_notif_sound_silent_value" translatable="false">0</string>
+    <string name="pref_notif_sound_silent_title">Silent</string>
+
+
+    <!-- FLICKR NOTES group -->'
+    <string name="pref_group_flickr_notes_settings_key" translatable="false">FLICKR_NOTES_KEY</string>
+    <string name="pref_group_flickr_notes">FLICKR NOTES</string>
+
+    <!-- UPLOAD TO FLICKR group -->'
+    <string name="pref_group_flickr_upload_settings_key" translatable="false">FLICKR_UPLOAD_KEY</string>
+    <string name="pref_group_flickr_upload">UPLOAD</string>
+
+    <!-- What show on full screen note -->
+    <string name="pref_key_what_show" translatable="false">WHAT_SHOW</string>
+    <string name="pref_title_what_show">On fullscreen show</string>
+    <string name="pref_def_what_show" translatable="false">1</string>
+
+    <!-- Map zoom level -->
+    <string name="pref_key_map_zoom_level" translatable="false">MAP_ZOOM_LEVEL</string>
+    <string name="pref_title_map_zoom_level">Map zoom level</string>
+    <string name="pref_def_map_zoom_level" translatable="false">2</string>
+
+    <!-- Overwrite tags -->
+    <string name="pref_key_overwrite_tags" translatable="false">OVERWRITE_TAGS</string>
+    <string name="pref_title_overwrite_tags">Overwrite tags</string>
+    <string name="pref_def_overwrite_tags" translatable="false">1</string>
+
+    <!-- Upload location -->
+    <string name="pref_key_upload_location" translatable="false">UPLOAD_LOCATION</string>
+    <string name="pref_title_upload_location">Location</string>
+    <string name="pref_upload_location_summ_on">Upload to Flickr</string>
+    <string name="pref_upload_location_summ_off">Do not upload to Flickr</string>
+    <string name="pref_def_upload_location" translatable="false">true</string>
+
+    <!-- Upload tags -->
+    <string name="pref_key_upload_tags" translatable="false">UPLOAD_TAGS</string>
+    <string name="pref_title_upload_tags">Tags</string>
+    <string name="pref_upload_tags_summ_on">Upload to Flickr</string>
+    <string name="pref_upload_tags_summ_off">Do not upload to Flickr</string>
+    <string name="pref_def_upload_tags" translatable="false">true</string>
+
+    <!-- Overwrite data -->
+    <string name="pref_key_overwrite_data" translatable="false">OVERWRITE_DATA</string>
+    <string name="pref_title_overwrite_data">Data overwrite</string>
+    <string name="pref_overwrite_data_summ_on">Overwrite existing data</string>
+    <string name="pref_overwrite_data_summ_off">Do not overwrite existing data</string>
+    <string name="pref_def_overwrite_data" translatable="false">false</string>
+
+    <!-- Archive notes -->
+    <string name="pref_key_archive_notes" translatable="false">ARCHIVE_NOTES</string>
+    <string name="pref_title_archive_notes">Archive notes</string>
+    <string name="pref_archive_notes_summ_on">Archive after upload finished</string>
+    <string name="pref_archive_notes_summ_off">Do not archive after upload finished</string>
+    <string name="pref_def_archive_notes" translatable="false">false</string>
+
+</resources>

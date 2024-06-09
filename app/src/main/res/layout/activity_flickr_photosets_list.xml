@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundPhotosets"
+    tools:context=".FlickrPhotosetsListActivity">
+
+    <LinearLayout
+        android:id="@+id/progressSpinnerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="@dimen/progress_spinner_view_padding">
+
+        <ProgressBar
+            android:id="@+id/progressSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/progressSpinnerTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/progress_spinner_title_padding_top"
+            android:text="@string/title_progress_photosets"
+            android:textSize="@dimen/progress_spinner_title_text_size"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/photosetsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/flickr_photosets_margin"
+        android:layout_marginRight="@dimen/flickr_photosets_margin"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/flickr_photosets_div_height" />
+
+</RelativeLayout>

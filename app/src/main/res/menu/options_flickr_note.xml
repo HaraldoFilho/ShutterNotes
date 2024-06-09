@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_sync_clock"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_clock_white_24dp"
+        android:title="@string/action_sync_clock"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_update_location"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_my_location_white_24"
+        android:title="@string/action_update_location"
+        app:showAsAction="ifRoom" />
+
+<!--    <item-->
+<!--        android:id="@+id/action_help"-->
+<!--        android:orderInCategory="3"-->
+<!--        android:title="@string/action_help"-->
+<!--        app:showAsAction="never" />-->
+
+</menu>
