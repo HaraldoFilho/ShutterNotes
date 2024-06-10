@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : AboutActivity.java
- *  Last modified : 6/7/24, 5:59 PM
+ *  Last modified : 6/10/24, 7:53 PM
  *
  *  -----------------------------------------------------------
  */
@@ -16,6 +16,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -58,22 +59,15 @@ public class AboutActivity extends AppCompatActivity {
 
         switch (id) {
 
-//            // Feedback
-//            case R.id.action_feedback:
-//                String[] feedback_address = new String[Constants.QUESTION_ARRAY_SIZE];
-//                feedback_address[Constants.LIST_HEAD] = getString(R.string.info_feedback_email);
-//                composeEmail(feedback_address, getString(R.string.action_feedback)
-//                        + Constants.SPACE + getString(R.string.action_about_application)
-//                        + Constants.SPACE + getString(R.string.info_app_name));
-//                break;
-//
-//            // Bug report
-//            case R.id.action_bug_report:
-//                String[] bug_address = new String[Constants.QUESTION_ARRAY_SIZE];
-//                bug_address[Constants.LIST_HEAD] = getString(R.string.info_bug_email);
-//                composeEmail(bug_address, getString(R.string.action_bug_report)
-//                        + Constants.SPACE + getString(R.string.info_app_name));
-//                break;
+            // Feedback
+            case R.id.action_feedback:
+                String[] addresses = new String[Constants.FEEDBACK_ARRAY_SIZE];
+                addresses[Constants.LIST_HEAD] = getString(R.string.info_feedback_email);
+                String subject = getString(R.string.action_feedback)
+                        + Constants.SPACE + getString(R.string.action_about_application)
+                        + Constants.SPACE + getString(R.string.info_app_name);
+                composeEmail(addresses, subject);
+                break;
 
             // Terms of use
             case R.id.action_terms_of_use:
@@ -100,13 +94,13 @@ public class AboutActivity extends AppCompatActivity {
 
     // Compose a e-mail to send a question
     private void composeEmail(String[] addresses, String subject) {
+        Log.d(Constants.LOG_DEBUG_TAG, "Address: " + addresses[0]);
+        Log.d(Constants.LOG_DEBUG_TAG, "Subject: " + subject);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+        startActivity(intent);
     }
 
 }

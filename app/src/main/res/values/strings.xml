@@ -7,29 +7,24 @@
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.0.0</string>
-    <string name="version_code" translatable="false">100</string>
+    <string name="version_number" translatable="false">1.0.1</string>
+    <string name="version_code" translatable="false">101</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
     <string name="info_name" translatable="false">Haraldo Albergaria</string>
-    <string name="info_website">haraldoalbergaria.page</string>
-    <string name="info_feedback_email" translatable="false">mohb.apps@gmail.com</string>
-    <string name="info_bug_email" translatable="false">mohb.apps@gmail.com</string>
-    <string name="info_developer">Developer:</string>
-    <string name="info_developer_name" translatable="false">Haraldo Albergaria</string>
+    <string name="info_website" translatable="false">haraldoalbergaria.page/apps/shutter-notes</string>
+    <string name="info_feedback_email" translatable="false">app.support@haraldoalbergaria.page</string>
     <string name="info_copyright_text" translatable="false">Copyright © 2024 Haraldo Albergaria</string>
     <string name="info_rights_reserved_text">All Rights Reserved.</string>
 
     <!--Content description-->
     <string name="cont_desc_app_icon" translatable="false">app icon</string>
-    <string name="cont_desc_mohb_logo" translatable="false">mohb logo</string>
 
     <!--Navigation drawer-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Haraldo Albergaria</string>
-    <string name="nav_header_subtitle">mohb.apps@gmail.com</string>
     <string name="nav_header_desc">ShutterNotes</string>
     <string name="nav_menu_simple">Simple Notes</string>
     <string name="nav_menu_gear">Gear Notes</string>
@@ -107,6 +102,9 @@
     <string name="action_sync_clock">Syncronize clock</string>
     <string name="action_update_location">Update location</string>
     <string name="action_help">Help</string>
+    <string name="action_url" translatable="false">Website</string>
+    <string name="action_email" translatable="false">Feedback</string>
+
 
     <string name="context_archive">Archive</string>
     <string name="context_restore">Restore</string>

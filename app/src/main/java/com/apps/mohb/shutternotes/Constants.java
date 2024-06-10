@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : Constants.java
- *  Last modified : 6/7/24, 8:32 PM
+ *  Last modified : 6/10/24, 1:27 PM
  *
  *  -----------------------------------------------------------
  */
@@ -88,8 +88,8 @@ public class Constants {
     public static final int NOTIFICATION_SILENT_ID = 0;
     public static final int NOTIFICATION_SOUND_ID = 1;
 
-    // Feedback and question
-    public static final int QUESTION_ARRAY_SIZE = 1;
+    // Feedback
+    public static final int FEEDBACK_ARRAY_SIZE = 1;
 
     // States
     public static final int STATE_COLOR_GREEN = 1;

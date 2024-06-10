@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : PrivacyPolicyDialogFragment.java
- *  Last modified : 6/7/24, 5:59 PM
+ *  Last modified : 6/8/24, 10:58 AM
  *
  *  -----------------------------------------------------------
  */

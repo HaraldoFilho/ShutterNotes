@@ -53,8 +53,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/info_app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SimpleNoteActivity"
@@ -68,37 +66,30 @@
         <activity
             android:name=".SimpleNotesListActivity"
             android:label="@string/activity_title_simple_notes"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GearNotesListActivity"
             android:label="@string/activity_title_gear_notes"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlickrNotesListActivity"
             android:label="@string/activity_title_flickr_notes"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlickrPhotosetsListActivity"
             android:label="@string/activity_title_flickr_photosets"
-            android:parentActivityName=".FlickrNotesListActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".FlickrNotesListActivity" />
         <activity
             android:name=".FlickrUploadToPhotosActivity"
-            android:label="@string/activity_title_flickr_upload"
-            android:screenOrientation="portrait" />
+            android:label="@string/activity_title_flickr_upload" />
         <activity
             android:name=".ReturnToForegroundActivity" />
         <activity
-            android:name=".FlickrPhotoActivity"
-            android:screenOrientation="portrait" />
+            android:name=".FlickrPhotoActivity" />
         <activity
             android:name=".ArchiveActivity"
             android:label="@string/activity_title_archive"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FullscreenNoteActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -106,29 +97,16 @@
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".FlickrAccountActivity"
-            android:label="@string/activity_title_flickr_connect"
-            android:screenOrientation="portrait" />
+            android:label="@string/activity_title_flickr_connect" />
         <activity
             android:name=".ClockActivity"
-            android:label="@string/activity_title_clock"
-            android:screenOrientation="portrait" />
+            android:label="@string/activity_title_clock" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/activity_title_settings"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".HelpActivity"
-            android:label="@string/activity_title_help"
-            android:screenOrientation="portrait" />
+            android:label="@string/activity_title_settings" />
         <activity
             android:name=".AboutActivity"
-            android:label="@string/activity_title_about"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".FeedbackActivity"
-            android:label="@string/action_feedback"
-            android:parentActivityName=".AboutActivity"
-            android:screenOrientation="portrait" />
+            android:label="@string/activity_title_about" />
     </application>
 
 </manifest>

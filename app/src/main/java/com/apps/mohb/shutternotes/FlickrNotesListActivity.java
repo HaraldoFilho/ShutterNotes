@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrNotesListActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/9/24, 11:12 AM
  *
  *  -----------------------------------------------------------
  */

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : HelpActivity.java
- *  Last modified : 6/7/24, 5:59 PM
+ *  Last modified : 6/10/24, 1:27 PM
  *
  *  -----------------------------------------------------------
  */
@@ -79,7 +79,7 @@ public class HelpActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_send_question) {
-            String[] address = new String[Constants.QUESTION_ARRAY_SIZE];
+            String[] address = new String[Constants.FEEDBACK_ARRAY_SIZE];
             address[Constants.LIST_HEAD] = getString(R.string.info_feedback_email);
             composeEmail(address, getString(R.string.action_question) + " " + getString(R.string.action_about_application)
                     + " " + getString(R.string.info_app_name));
