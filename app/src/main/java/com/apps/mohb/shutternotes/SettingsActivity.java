@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : SettingsActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 5:37 PM
  *
  *  -----------------------------------------------------------
  */
@@ -18,7 +18,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.Menu;
@@ -160,7 +159,6 @@ public class SettingsActivity extends AppCompatActivity implements
 
         @Override
         public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-            setHasOptionsMenu(true);
 
             Context context = getPreferenceManager().getContext();
             PreferenceScreen preferenceScreen = getPreferenceManager().createPreferenceScreen(context);
@@ -179,56 +177,6 @@ public class SettingsActivity extends AppCompatActivity implements
             generalSettingsCategory.setTitle(R.string.pref_group_general_settings);
             preferenceScreen.addPreference(generalSettingsCategory);
             generalSettingsCategory.addPreference(fontSizePreference);
-
-            // Notification sound
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-
-                Preference notificationSoundPreference = new Preference(context);
-                notificationSoundPreference.setTitle(R.string.pref_title_notif_sound);
-                notificationSoundPreference.setOnPreferenceClickListener(preference -> {
-                    Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
-                    intent.putExtra(Settings.EXTRA_APP_PACKAGE, requireActivity().getPackageName());
-                    intent.putExtra(Settings.EXTRA_CHANNEL_ID, Constants.NOTIFICATION_CHANNEL);
-                    startActivity(intent);
-                    return false;
-                });
-
-                generalSettingsCategory.addPreference(notificationSoundPreference);
-
-            } else {
-
-                Preference notificationSoundPreference = new Preference(context);
-                notificationSoundPreference.setTitle(R.string.pref_title_notif_sound);
-                notificationSoundPreference.setOnPreferenceClickListener(preference -> {
-
-                    Intent intent = new Intent(RingtoneManager.ACTION_RINGTONE_PICKER);
-                    intent.putExtra(RingtoneManager.EXTRA_RINGTONE_TYPE, RingtoneManager.TYPE_NOTIFICATION);
-                    intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_DEFAULT, true);
-                    intent.putExtra(RingtoneManager.EXTRA_RINGTONE_SHOW_SILENT, true);
-                    intent.putExtra(RingtoneManager.EXTRA_RINGTONE_DEFAULT_URI, Settings.System.DEFAULT_NOTIFICATION_URI);
-
-                    String existingValue = getRingtonePreferenceValue(getContext()); // TODO
-                    if (existingValue != null) {
-                        if (existingValue.isEmpty()) {
-                            // Select "Silent"
-                            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, (Uri) null);
-                        } else {
-                            intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, Uri.parse(existingValue));
-                        }
-                    } else {
-                        // No ringtone has been selected, set to the default
-                        intent.putExtra(RingtoneManager.EXTRA_RINGTONE_EXISTING_URI, Settings.System.DEFAULT_NOTIFICATION_URI);
-                    }
-
-                    assert getActivity() != null;
-                    getActivity().startActivityForResult(intent, Constants.REQUEST_CODE_RINGTONE);
-                    return false;
-
-                });
-
-                generalSettingsCategory.addPreference(notificationSoundPreference);
-
-            }
 
             // What to show on Fullscreen
             ListPreference whatShowPreference = new ListPreference(context);
@@ -304,6 +252,19 @@ public class SettingsActivity extends AppCompatActivity implements
             uploadCategory.addPreference(uploadLocationPreference);
             uploadCategory.addPreference(uploadTagsPreference);
             uploadCategory.addPreference(overwriteTagsPreference);
+
+            // Notification sound
+            Preference notificationSoundPreference = new Preference(context);
+            notificationSoundPreference.setTitle(R.string.pref_title_notif_sound);
+            notificationSoundPreference.setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, requireActivity().getPackageName());
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, Constants.NOTIFICATION_CHANNEL);
+                startActivity(intent);
+                return false;
+            });
+
+            uploadCategory.addPreference(notificationSoundPreference);
 
             setPreferenceScreen(preferenceScreen);
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title id="page_title"></title>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="res/strings_en-us.js"></script>
+  <script src="res/strings_pt-br.js"></script>
+</head>
+
+<body>
+
+<h2 id="main_title"></h2>
+
+<h4 id="q1_title" style="margin-bottom: -10px"></h4>
+<p id="q1_text"></p>
+
+<h4 id="q2_title" style="margin-bottom: -10px"></h4>
+<p id="q2_text"></p>
+
+<h4 id="q3_title" style="margin-bottom: -10px"></h4>
+<p id="q3_text"></p>
+
+<h4 id="q4_title" style="margin-bottom: -10px"></h4>
+<p id="q4_text"></p>
+
+<h4 id="q5_title" style="margin-bottom: -10px"></h4>
+<p id="q5_text"></p>
+
+<h4 id="q6_title" style="margin-bottom: -10px"></h4>
+<p id="q6_text"></p>
+
+<script>
+
+  var userLang = navigator.language || navigator.userLanguage;
+  console.log ("User language is: " + userLang);
+
+  if (userLang == 'pt-BR') {
+
+    document.getElementById('page_title').innerText = page_title_pt_br;
+
+    document.getElementById('main_title').innerHTML = main_title_pt_br;
+
+    document.getElementById('q1_title').innerHTML = q1_title_pt_br;
+    document.getElementById('q1_text').innerHTML = q1_text_pt_br;
+
+    document.getElementById('q2_title').innerHTML = q2_title_pt_br;
+    document.getElementById('q2_text').innerHTML = q2_text_pt_br;
+
+    document.getElementById('q3_title').innerHTML = q3_title_pt_br;
+    document.getElementById('q3_text').innerHTML = q3_text_pt_br;
+
+    document.getElementById('q4_title').innerHTML = q4_title_pt_br;
+    document.getElementById('q4_text').innerHTML = q4_text_pt_br;
+
+    document.getElementById('q5_title').innerHTML = q5_title_pt_br;
+    document.getElementById('q5_text').innerHTML = q5_text_pt_br;
+
+    document.getElementById('q6_title').innerHTML = q6_title_pt_br;
+    document.getElementById('q6_text').innerHTML = q6_text_pt_br;
+
+  } else {
+
+    document.getElementById('page_title').innerText = page_title_en_us;
+
+    document.getElementById('main_title').innerHTML = main_title_en_us;
+
+    document.getElementById('q1_title').innerHTML = q1_title_en_us;
+    document.getElementById('q1_text').innerHTML = q1_text_en_us;
+
+    document.getElementById('q2_title').innerHTML = q2_title_en_us;
+    document.getElementById('q2_text').innerHTML = q2_text_en_us;
+
+    document.getElementById('q3_title').innerHTML = q3_title_en_us;
+    document.getElementById('q3_text').innerHTML = q3_text_en_us;
+
+    document.getElementById('q4_title').innerHTML = q4_title_en_us;
+    document.getElementById('q4_text').innerHTML = q4_text_en_us;
+
+    document.getElementById('q5_title').innerHTML = q5_title_en_us;
+    document.getElementById('q5_text').innerHTML = q5_text_en_us;
+
+    document.getElementById('q6_title').innerHTML = q6_title_en_us;
+    document.getElementById('q6_text').innerHTML = q6_text_en_us;
+
+  }
+  
+</script>
+
+
+</body>
+</html>

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearNoteActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 3:52 PM
  *
  *  -----------------------------------------------------------
  */
@@ -16,6 +16,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -35,6 +36,7 @@ import com.apps.mohb.shutternotes.adapters.GearNoteAdapter;
 import com.apps.mohb.shutternotes.fragments.dialogs.DeleteAllAlertFragment;
 import com.apps.mohb.shutternotes.fragments.dialogs.EditGearListDialogFragment;
 import com.apps.mohb.shutternotes.fragments.dialogs.GearDeleteAlertFragment;
+import com.apps.mohb.shutternotes.fragments.dialogs.RestoreBackupAlertFragment;
 import com.apps.mohb.shutternotes.lists.GearList;
 
 import java.io.IOException;
@@ -44,7 +46,8 @@ import java.util.Objects;
 public class GearNoteActivity extends AppCompatActivity
         implements EditGearListDialogFragment.EditGearListDialogListener,
         GearDeleteAlertFragment.GearDeleteDialogListener,
-        DeleteAllAlertFragment.DeleteAllAlertDialogListener {
+        DeleteAllAlertFragment.DeleteAllAlertDialogListener,
+        RestoreBackupAlertFragment.RestoreBackupAlertDialogListener {
 
     private GearList gearList;
     private ListView gearListView;
@@ -266,6 +269,21 @@ public class GearNoteActivity extends AppCompatActivity
                 break;
             }
 
+            case R.id.action_export_list: {
+                if (!gearList.getList().isEmpty()) {
+                    createFile();
+                } else {
+                    Toast.makeText(this, R.string.toast_empty_list, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            }
+
+            case R.id.action_import_list: {
+                DialogFragment restoreBackupDialog = new RestoreBackupAlertFragment();
+                restoreBackupDialog.show(getSupportFragmentManager(), "RestoreBackupDialogFragment");
+                break;
+            }
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -347,10 +365,75 @@ public class GearNoteActivity extends AppCompatActivity
         dialog.dismiss();
     }
 
+    @Override
+    public void onRestoreBackupDialogPositiveClick(DialogFragment dialog) {
+        openFile();
+    }
+
+    @Override
+    public void onRestoreBackupDialogNegativeClick(DialogFragment dialog) {
+        dialog.dismiss();
+    }
+
     // CLASS METHODS
 
     private int getCorrectPosition(int position) {
         return position - Constants.LIST_HEADER_POSITION;
+    }
+
+
+    // Request code for creating a PDF document.
+
+    private void createFile() {
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TITLE, R.string.action_export_file_name);
+        startActivityForResult(intent, Constants.CREATE_FILE);
+    }
+
+    private void openFile() {
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("text/plain");
+        startActivityForResult(intent, Constants.OPEN_FILE);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode,
+                                 Intent resultData) {
+        super.onActivityResult(requestCode, resultCode, resultData);
+
+        if (resultData != null) {
+            Uri uri = resultData.getData();
+
+            switch (requestCode) {
+                case Constants.CREATE_FILE: {
+                    try {
+                        gearList.backupList(getApplicationContext(), uri);
+                        Toast.makeText(this, R.string.toast_exported, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                break;
+
+                case Constants.OPEN_FILE: {
+                    try {
+                        gearList.getList().clear();
+                        gearList.restoreList(getApplicationContext(), uri);
+                        gearListView.setAdapter(gearNoteAdapter);
+                        Toast.makeText(this, R.string.toast_imported, Toast.LENGTH_SHORT).show();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                break;
+            }
+
+        } else {
+            Log.e(Constants.LOG_ERROR_TAG, "ERROR: No result data");
+        }
     }
 
 }

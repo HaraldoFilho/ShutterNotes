@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrUploadToPhotosActivity.java
- *  Last modified : 6/9/24, 10:42 AM
+ *  Last modified : 6/13/24, 3:52 PM
  *
  *  -----------------------------------------------------------
  */

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearList.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 5:42 PM
  *
  *  -----------------------------------------------------------
  */
@@ -14,11 +14,20 @@ package com.apps.mohb.shutternotes.lists;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.ParcelFileDescriptor;
+import android.util.Log;
 
 import com.apps.mohb.shutternotes.Constants;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 public class GearList {
@@ -177,4 +186,46 @@ public class GearList {
         gearTextEdit.edit().putInt(Constants.GEAR_ITEM_POSITION, itemPosition).apply();
     }
 
+
+    // Backup and Restore methods
+
+    public void backupList(Context context, Uri uri) throws IOException {
+        try {
+            ParcelFileDescriptor pfd = context.getContentResolver().
+                    openFileDescriptor(uri, "w");
+            assert pfd != null;
+            FileOutputStream fileOutputStream =
+                    new FileOutputStream(pfd.getFileDescriptor());
+            for (int i = 0; i < list.size(); i++) {
+                String item = list.get(i).getGearItem();
+                Log.d(Constants.LOG_DEBUG_TAG, "Item: " + item);
+                fileOutputStream.write(item.getBytes());
+                fileOutputStream.write("\n".getBytes());
+            }
+            // Let the document provider know you're done by closing the stream.
+            fileOutputStream.close();
+            pfd.close();
+        } catch (FileNotFoundException e) {
+            Log.e(Constants.LOG_ERROR_TAG, Log.getStackTraceString(e));
+        }
+    }
+
+    public void restoreList(Context context, Uri uri) throws IOException {
+
+        String line;
+
+        try (InputStream inputStream =
+                     context.getContentResolver().openInputStream(uri)) {
+            try (BufferedReader reader = new BufferedReader(
+                    new InputStreamReader(Objects.requireNonNull(inputStream)))) {
+                while ((line = reader.readLine()) != null) {
+                    Log.d(Constants.LOG_DEBUG_TAG, "Line: ");
+                    gearList.add(line.trim());
+                }
+            }
+        }
+        gearList.saveState(context, Constants.GEAR_LIST_SAVED_STATE);
+    }
+
 }
+

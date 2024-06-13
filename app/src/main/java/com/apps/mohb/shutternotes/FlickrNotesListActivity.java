@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrNotesListActivity.java
- *  Last modified : 6/9/24, 11:12 AM
+ *  Last modified : 6/13/24, 5:37 PM
  *
  *  -----------------------------------------------------------
  */
@@ -171,8 +171,6 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
             menuItemUploadToFlickr.setEnabled(false);
             menuItemArchiveAll.setEnabled(false);
         }
-//        MenuItem menuHelp = menu.findItem(R.id.action_help);
-//        menuHelp.setEnabled(false);
         return true;
     }
 
@@ -226,14 +224,6 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
                 unselectAllNotes();
                 break;
             }
-
-//            // Help
-//            case R.id.action_help: {
-//                Intent intent = new Intent(this, HelpActivity.class);
-//                intent.putExtra(Constants.KEY_URL, getString(R.string.url_help_flickr_notes));
-//                startActivity(intent);
-//                break;
-//            }
 
         }
 

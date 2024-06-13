@@ -6,7 +6,7 @@
         android:orderInCategory="1"
         android:icon="@drawable/ic_add_white_24dp"
         android:title="@string/action_add_gear"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_select_all"
         android:orderInCategory="2"
@@ -20,13 +20,16 @@
     <item
         android:id="@+id/action_reorder"
         android:orderInCategory="4"
-        android:title="@string/action_reorder"
+        android:title="@string/action_reorder_list"
         app:showAsAction="never" />
-
-<!--    <item-->
-<!--        android:id="@+id/action_help"-->
-<!--        android:orderInCategory="5"-->
-<!--        android:title="@string/action_help"-->
-<!--        app:showAsAction="never" />-->
-
+    <item
+        android:id="@+id/action_import_list"
+        android:orderInCategory="5"
+        android:title="@string/action_import_list"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_export_list"
+        android:orderInCategory="6"
+        android:title="@string/action_export_list"
+        app:showAsAction="never" />
 </menu>

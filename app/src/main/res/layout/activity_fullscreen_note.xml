@@ -17,7 +17,6 @@
         android:gravity="center"
         android:keepScreenOn="true"
         android:padding="@dimen/item_spacing"
-        android:text="@string/dummy_content"
         android:textColor="@color/colorWhiteText"
         android:textStyle="bold" />
 

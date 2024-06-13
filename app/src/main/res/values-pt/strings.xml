@@ -49,10 +49,6 @@
     <string name="activity_title_note_fullscreen">Nota em Tela Cheia</string>
     <string name="toast_must_type">Você precisa escrever alguma coisa</string>
     <string name="toast_must_type_title">Você precisa colocar um título</string>
-    <string name="url_contact">br-contact</string>
-    <string name="url_help">br-shutter-notes</string>
-    <string name="url_help_settings">br-shutternotes-help-settings</string>
-    <string name="url_bug_report">br-bug-report</string>
     <string name="activity_title_flickr_notes">Notas do Flickr</string>
     <string name="activity_title_gear_notes">Notas de Equipamento</string>
     <string name="activity_title_simple_notes">Notas Simples</string>
@@ -76,13 +72,15 @@
     <string name="action_select_all">Selecionar tudo</string>
     <string name="dialog_edit_gear_title">Editar Acessório</string>
     <string name="action_delete_all">Excluir tudo</string>
-    <string name="action_reorder">Reordenar</string>
+    <string name="action_reorder_list">Reordenar</string>
     <string name="alert_title_delete_all_notes">Excluir todas as notas?</string>
     <string name="toast_reordered">Os items foram reordenados</string>
     <string name="context_restore">Restaurar</string>
     <string name="activity_title_archive">Arquivadas</string>
     <string name="bot_nav_menu_gear">Equipamento</string>
     <string name="bot_nav_menu_simple">Simples</string>
+    <string name="action_export_list">Exportar</string>
+    <string name="action_import_list">Importar</string>
     <string name="action_archive_all">Arquivar tudo</string>
     <string name="action_restore_all">Restaurar tudo</string>
     <string name="toast_all_notes_archived">Todas as notas foram arquivadas</string>
@@ -140,23 +138,15 @@
     <string name="dialog_instruction_fullscreen_message">Tire uma foto da tela verde para marcar o início da sequência de fotos. Após terminar, toque por alguns segundos na tela para torná-la vermelha e tire uma foto para marcar o final da sequência. Por fim, toque por alguns segundos novamente na tela para sair.</string>
     <string name="dialog_instruction_title">Instruções</string>
     <string name="pref_title_overwrite_tags">Sobrescrever tags</string>
-    <string name="pref_group_flickr_upload">UPLOAD</string>
+    <string name="pref_group_flickr_upload">UPLOAD PARA O FLICKR</string>
     <string name="nav_menu_clock">Sincronizar Relógios</string>
     <string name="activity_title_clock">Relógio</string>
     <string name="text_syncronize_clock">SINCRONIZE O RELÓGIO DA SUA CÂMERA</string>
     <string name="action_sync_clock">Sincronizar relógio</string>
     <string name="alert_title_authenticate">Autenticação necessária!</string>
     <string name="alert_message_authenticate">Você precisa se autenticar no Flickr para fazer upload dos dados. Deseja tentar novamente?</string>
-    <string name="url_help_archived">br-shutternotes-help-archived</string>
-    <string name="url_help_flickr_notes">br-shutternotes-help-flickrnotes</string>
-    <string name="url_help_gear_notes">br-shutternotes-help-gearnotes</string>
-    <string name="url_help_simple_note">br-shutternotes-help-simplenote</string>
-    <string name="url_help_simple_notes">br-shutternotes-help-simplenotes</string>
-    <string name="url_help_gear_note">br-shutternotes-help-gearnote</string>
-    <string name="url_help_flickr_note">br-shutternotes-help-flicknote</string>
     <string name="action_help">Ajuda</string>
     <string name="toast_unable_to_communicate">Falha na comunicação com o Flickr</string>
-    <string name="action_bug_report">Falha no aplicativo</string>
     <string name="toast_location_updated">Localização atualizada!</string>
     <string name="toast_location_not_updated">Não foi possível atualizar a localização</string>
     <string name="action_update_location">Atualizar localização</string>
@@ -177,5 +167,12 @@
     <string name="pref_notif_sound_silent_title">Silencioso</string>
     <string name="notify_channel_description">Mostra o progresso do upload and reabre o aplicativo se clicado</string>
     <string name="notify_channel_name">Upload para o Flickr</string>
+    <string name="toast_file_not_found">Arquivo não encontrado</string>
+    <string name="toast_exported">Lista foi exportada!</string>
+    <string name="toast_imported">Lista foi importada!</string>
+    <string name="alert_title_import_file">Importar arquivo?</string>
+    <string name="alert_message_import_file">A lista de acessórios atual será substituída pela lista do arquivo\n</string>
+    <string name="toast_empty_list">A lista está vazia</string>
+    <string name="action_export_file_name">lista_de_acessórios.txt</string>
 
 </resources>

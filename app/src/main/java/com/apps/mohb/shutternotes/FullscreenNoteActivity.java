@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FullscreenNoteActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 3:52 PM
  *
  *  -----------------------------------------------------------
  */
@@ -28,6 +28,7 @@ import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -85,7 +86,6 @@ public class FullscreenNoteActivity extends AppCompatActivity
 
 
     private final Runnable mHidePart2Runnable = () -> {
-
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
             WindowInsetsController controller = textView.getWindowInsetsController();
             if (controller != null) {
@@ -99,7 +99,6 @@ public class FullscreenNoteActivity extends AppCompatActivity
                     | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
                     | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         }
-
     };
 
     private final Runnable mShowPart2Runnable = () -> {
@@ -131,10 +130,12 @@ public class FullscreenNoteActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
 
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_fullscreen_note);
 
         notebook = Notebook.getInstance(getApplicationContext());
@@ -213,6 +214,7 @@ public class FullscreenNoteActivity extends AppCompatActivity
 
         if (mVisible) {
             textView.setBackgroundColor(getResources().getColor(R.color.colorBackgroundGreen, null));
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorBackgroundGreen, null));
         } else {
 
             switch (state) {

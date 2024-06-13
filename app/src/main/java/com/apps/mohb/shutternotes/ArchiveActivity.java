@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : ArchiveActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 5:37 PM
  *
  *  -----------------------------------------------------------
  */
@@ -38,6 +38,7 @@ import com.apps.mohb.shutternotes.lists.Archive;
 import com.apps.mohb.shutternotes.lists.Notebook;
 import com.apps.mohb.shutternotes.views.GridViewWithHeaderAndFooter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.io.IOException;
 
@@ -62,8 +63,8 @@ public class ArchiveActivity extends AppCompatActivity implements
     Toast allNotesRestored;
 
 
-    private final BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    private final NavigationBarView.OnItemSelectedListener mOnItemSelectedListener
+            = new NavigationBarView.OnItemSelectedListener() {
 
         @SuppressLint("NonConstantResourceId")
         @Override
@@ -88,7 +89,7 @@ public class ArchiveActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_archive);
         botNavView = findViewById(R.id.botNavView);
-        botNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        botNavView.setOnItemSelectedListener(mOnItemSelectedListener);
 
         // Create list header and footer, that will insert spaces on top and bottom of the
         // list to make material design effect elevation and shadow
@@ -178,8 +179,6 @@ public class ArchiveActivity extends AppCompatActivity implements
         menuItemRestoreAll.setIcon(R.drawable.ic_unarchive_white_24dp);
         menuItemDeleteAll.setEnabled(true);
         menuItemRestoreAll.setEnabled(true);
-//        MenuItem menuHelp = menu.findItem(R.id.action_help);
-//        menuHelp.setEnabled(false);
         return true;
     }
 
@@ -208,14 +207,6 @@ public class ArchiveActivity extends AppCompatActivity implements
                 }
                 break;
             }
-
-//            // Help
-//            case R.id.action_help: {
-//                Intent intent = new Intent(this, HelpActivity.class);
-//                intent.putExtra(Constants.KEY_URL, getString(R.string.url_help_archived));
-//                startActivity(intent);
-//                break;
-//            }
 
         }
 

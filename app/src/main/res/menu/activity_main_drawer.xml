@@ -2,7 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <group android:checkableBehavior="single">
 
         <group
             android:id="@+id/grp1"
@@ -46,15 +45,14 @@
         <group
             android:id="@+id/grp3"
             android:checkableBehavior="single">
-<!--            <item-->
-<!--                android:id="@+id/nav_help"-->
-<!--                android:icon="@drawable/ic_nav_help_black_18dp"-->
-<!--                android:title="@string/nav_menu_help" />-->
+            <item
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_nav_help_black_18dp"
+                android:title="@string/nav_menu_help" />
             <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/ic_nav_info_black_18dp"
                 android:title="@string/nav_menu_about" />
         </group>
-    </group>
 
 </menu>

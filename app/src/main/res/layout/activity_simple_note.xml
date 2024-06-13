@@ -19,7 +19,9 @@
         android:gravity="top"
         android:hint="@string/text_hint_simple_note"
         android:inputType="textMultiLine"
-        android:padding="@dimen/simple_note_text_padding"
+        android:paddingTop="@dimen/simple_note_text_padding_top"
+        android:paddingHorizontal="@dimen/simple_note_text_padding_sides"
+        android:paddingBottom="@dimen/simple_note_text_padding_bottom"
         android:singleLine="false"
         android:textSize="@dimen/simple_note_font_size"
         tools:targetApi="o" />
@@ -32,34 +34,34 @@
         android:gravity="bottom"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonSimpleNoteCancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
-            android:text="@string/button_cancel"
-            android:textSize="@dimen/button_font_size" />
-
-        <Button
+       <Button
             android:id="@+id/buttonSimpleNoteClear"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
             android:text="@string/button_clear"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 
         <Button
             android:id="@+id/buttonSimpleNoteOk"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
             android:text="@string/button_show"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
+            android:id="@+id/buttonSimpleNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_cancel"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 
     </LinearLayout>

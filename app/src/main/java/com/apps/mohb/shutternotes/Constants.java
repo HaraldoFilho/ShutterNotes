@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : Constants.java
- *  Last modified : 6/10/24, 1:27 PM
+ *  Last modified : 6/13/24, 3:52 PM
  *
  *  -----------------------------------------------------------
  */
@@ -47,6 +47,7 @@ public class Constants {
     public static final String JSON_TAGS = "tags";
     public static final String JSON_LATITUDE = "latitude";
     public static final String JSON_LONGITUDE = "longitude";
+    public static final String GEAR_LIST_BACKUP_FILE = "gear_list.json";
 
     // Date
     public static final String DATE_FORMAT = "yyyy:MM:dd HH:mm:ss";
@@ -179,6 +180,10 @@ public class Constants {
     public static final String PREF_KEY_ARCHIVE_NOTES = "ARCHIVE_NOTES";
 
     public static final int REQUEST_CODE_RINGTONE = 1;
+
+    public static final int CREATE_FILE = 1;
+    public static final int OPEN_FILE = 2;
+
 
     // Log tags
     public static final String LOG_DEBUG_TAG = "DEBUG_NOTES";

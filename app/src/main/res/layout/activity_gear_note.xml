@@ -30,34 +30,35 @@
         android:background="@color/colorBackgroundWhite">
 
         <Button
-            android:id="@+id/buttonGearNoteCancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
-            android:text="@string/button_cancel"
-            android:textSize="@dimen/button_font_size" />
-
-        <Button
             android:id="@+id/buttonGearNoteReset"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
             android:text="@string/button_reset"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 
         <Button
             android:id="@+id/buttonGearNoteOk"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textColor="@color/colorPrimary"
             android:text="@string/button_show"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
+
+        <Button
+            android:id="@+id/buttonGearNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/button_font_size" />
+
     </LinearLayout>
 
 

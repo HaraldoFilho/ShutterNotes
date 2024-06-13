@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearNoteAdapter.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 5:37 PM
  *
  *  -----------------------------------------------------------
  */
@@ -75,10 +75,8 @@ public class GearNoteAdapter extends ArrayAdapter<Gear> {
 
         if (item.isSelected()) {
             convertView.setBackground(ResourcesCompat.getDrawable(getContext().getResources(), R.drawable.gear_item_tile_selected, null));
-            //txtItem.setTextColor(getContext().getResources().getColor(R.color.colorBlackText, null));
         } else {
             convertView.setBackground(ResourcesCompat.getDrawable(getContext().getResources(), R.drawable.gear_item_tile, null));
-            //txtItem.setTextColor(getContext().getResources().getColor(R.color.colorBlackText, null));
         }
 
         return convertView;

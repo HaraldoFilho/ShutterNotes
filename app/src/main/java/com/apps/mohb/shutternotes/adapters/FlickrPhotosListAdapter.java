@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrPhotosListAdapter.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 3:52 PM
  *
  *  -----------------------------------------------------------
  */

@@ -7,8 +7,8 @@
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.0.1</string>
-    <string name="version_code" translatable="false">101</string>
+    <string name="version_number" translatable="false">1.2.3</string>
+    <string name="version_code" translatable="false">123</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
@@ -87,14 +87,15 @@
     <string name="action_website">Website</string>
     <string name="action_feedback">Feedback</string>
     <string name="action_question">Question</string>
-    <string name="action_bug_report">Bug in application</string>
     <string name="action_about_application">about application</string>
     <string name="action_settings">Settings</string>
     <string name="action_add_gear">Add new gearItem</string>
     <string name="action_select_all">Select all</string>
     <string name="action_unselect_all">Unselect all</string>
     <string name="action_delete_all">Delete all</string>
-    <string name="action_reorder">Reorder</string>
+    <string name="action_reorder_list">Reorder</string>
+    <string name="action_export_list">Export</string>
+    <string name="action_import_list">Import</string>
     <string name="action_archive_all">Archive all</string>
     <string name="action_restore_all">Restore all</string>
     <string name="action_upload_to_flickr">Upload to Flickr</string>
@@ -104,6 +105,7 @@
     <string name="action_help">Help</string>
     <string name="action_url" translatable="false">Website</string>
     <string name="action_email" translatable="false">Feedback</string>
+    <string name="action_export_file_name">gear_list.txt</string>
 
 
     <string name="context_archive">Archive</string>
@@ -146,6 +148,7 @@
     <string name="alert_title_confirm_upload">Confirm upload?</string>
     <string name="alert_title_run_background">Continue in background</string>
     <string name="alert_title_authenticate">Authentication needed!</string>
+    <string name="alert_title_import_file">Import file?</string>
     <string name="alert_message_reset_preferences">All settings will be restored to the default values\n</string>
     <string name="alert_message_no_undone">This action can not be undone\n</string>
     <string name="alert_message_can_be_restored">They will can be restored later\n</string>
@@ -154,6 +157,7 @@
     <string name="alert_message_confirm_upload">The notes information will be uploaded to the selected photoset. AFTER STARTED, THIS OPERATION WILL CAN NOT BE CANCELED!</string>
     <string name="alert_message_run_background">Do you want to continue the upload in background? You will be notified when it is finished\n</string>
     <string name="alert_message_authenticate">You need to authenticate in your Flickr account to upload data. Do you want to try again?</string>
+    <string name="alert_message_import_file">The current gear list will be replaced with the list in the file\n</string>
     <string name="alert_button_no">No</string>
     <string name="alert_button_yes">Yes</string>
 
@@ -173,6 +177,10 @@
     <string name="toast_unable_to_communicate">Unable to communicate with Flickr</string>
     <string name="toast_location_updated">Location updated!</string>
     <string name="toast_location_not_updated">Unable to update location</string>
+    <string name="toast_exported">Gear list exported!</string>
+    <string name="toast_imported">Gear list imported!</string>
+    <string name="toast_empty_list">List is empty</string>
+    <string name="toast_file_not_found">File not found</string>
 
     <!-- Notification -->
     <string name="notify_channel_name">Upload to Flickr</string>
@@ -188,21 +196,8 @@
     <string name="notify_updated">updated</string>
 
     <!--Help pages-->
-    <string name="url_website" translatable="false">https://haraldoalbergaria.page/apps/shutter-notes</string>
-    <string name="url_help">help</string>
-    <string name="url_help_simple_note">shutternotes-help-simplenote</string>
-    <string name="url_help_gear_note">shutternotes-help-gearnote</string>
-    <string name="url_help_flickr_note">shutternotes-help-flicknote</string>
-    <string name="url_help_simple_notes">shutternotes-help-simplenotes</string>
-    <string name="url_help_gear_notes">shutternotes-help-gearnotes</string>
-    <string name="url_help_flickr_notes">shutternotes-help-flickrnotes</string>
-    <string name="url_help_archived">shutternotes-help-archived</string>
-    <string name="url_help_settings">shutternotes-help-settings</string>
-    <string name="url_contact">contact</string>
-    <string name="url_bug_report">bug-report</string>
-
-    <string name="dummy_button" translatable="false">Dummy Button</string>
-    <string name="dummy_content" translatable="false">DUMMY\nCONTENT</string>
+    <string name="url_website" translatable="false">https://haraldoalbergaria.page/apps/shutter-notes/</string>
+    <string name="url_help" translatable="false">help/</string>
 
     <!-- Settings -->
 
@@ -228,7 +223,7 @@
 
     <!-- UPLOAD TO FLICKR group -->'
     <string name="pref_group_flickr_upload_settings_key" translatable="false">FLICKR_UPLOAD_KEY</string>
-    <string name="pref_group_flickr_upload">UPLOAD</string>
+    <string name="pref_group_flickr_upload">UPLOAD TO FLICKR</string>
 
     <!-- What show on full screen note -->
     <string name="pref_key_what_show" translatable="false">WHAT_SHOW</string>

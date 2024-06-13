@@ -96,6 +96,7 @@ a:visited {
 
   .header {
     width: 100%;
+    font-size: 70px;
   }
 
   .main {
@@ -103,11 +104,7 @@ a:visited {
   }
 
   .panel {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 0px;
-    padding-right: 0px;
+    display: none;
   }
 
   .footer {
@@ -119,8 +116,7 @@ a:visited {
     grid-template-areas:
     'header'
     'main'
-    'footer'
-    'panel';
+    'footer';
     grid-gap: 20px;
     justify-content: center;
     background-color: #FFFFFF;

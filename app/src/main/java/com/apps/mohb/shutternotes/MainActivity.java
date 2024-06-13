@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : MainActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/13/24, 5:42 PM
  *
  *  -----------------------------------------------------------
  */
@@ -16,7 +16,6 @@ import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
@@ -72,16 +71,14 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         });
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationManager notificationManager = getSystemService(NotificationManager.class);
-            CharSequence name = getString(R.string.notify_channel_name);
-            String description = getString(R.string.notify_channel_description);
-            int importance = NotificationManager.IMPORTANCE_DEFAULT;
-            NotificationChannel channel;
-            channel = new NotificationChannel(Constants.NOTIFICATION_CHANNEL, name, importance);
-            channel.setDescription(description);
-            notificationManager.createNotificationChannel(channel);
-        }
+        NotificationManager notificationManager = getSystemService(NotificationManager.class);
+        CharSequence name = getString(R.string.notify_channel_name);
+        String description = getString(R.string.notify_channel_description);
+        int importance = NotificationManager.IMPORTANCE_DEFAULT;
+        NotificationChannel channel;
+        channel = new NotificationChannel(Constants.NOTIFICATION_CHANNEL, name, importance);
+        channel.setDescription(description);
+        notificationManager.createNotificationChannel(channel);
 
     }
 
@@ -142,11 +139,11 @@ public class MainActivity extends AppCompatActivity
                 intent = new Intent(this, SettingsActivity.class);
                 break;
 
-//            // Help
-//            case R.id.nav_help:
-//                intent = new Intent(this, HelpActivity.class);
-//                intent.putExtra(Constants.KEY_URL, getString(R.string.url_help));
-//                break;
+            // Help
+            case R.id.nav_help:
+                intent = new Intent(this, HelpActivity.class);
+                intent.putExtra(Constants.KEY_URL, getString(R.string.url_help));
+                break;
 
             // About
             case R.id.nav_about:
