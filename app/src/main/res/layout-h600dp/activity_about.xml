@@ -63,56 +63,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="1dp" />
 
-<!--    <ImageView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/imageLogo"-->
-<!--        android:contentDescription="@string/cont_desc_mohb_logo"-->
-<!--        android:layout_above="@+id/textName"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:src="@drawable/mohb_logo"/>-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:attr/textAppearanceMedium"-->
-<!--        android:text="@string/info_name"-->
-<!--        android:id="@+id/textName"-->
-<!--        android:layout_above="@+id/textWebsite"-->
-<!--        android:layout_centerHorizontal="true" />-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:attr/textAppearanceSmall"-->
-<!--        android:textSize="12sp"-->
-<!--        android:text="@string/info_website"-->
-<!--        android:id="@+id/textWebsite"-->
-<!--        android:layout_above="@+id/textDeveloper"-->
-<!--        android:layout_centerHorizontal="true" />-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:attr/textAppearanceSmall"-->
-<!--        android:textSize="12sp"-->
-<!--        android:text="@string/info_developer"-->
-<!--        android:id="@+id/textDeveloper"-->
-<!--        android:layout_above="@+id/textDeveloperName"-->
-<!--        android:layout_marginTop="15dp"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:textStyle="italic" />-->
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:textAppearance="?android:attr/textAppearanceSmall"-->
-<!--        android:textSize="12sp"-->
-<!--        android:text="@string/info_developer_name"-->
-<!--        android:id="@+id/textDeveloperName"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_marginBottom="60dp"-->
-<!--        android:textStyle="italic" />-->
+    <Button
+        android:id="@+id/buttonBmc"
+        android:layout_width="107dp"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="70dp"
+        android:contentDescription="@string/info_bmc"
+        android:background="@drawable/bmc_button"
+        android:scaleType="centerCrop" />
 
 </RelativeLayout>

@@ -3,7 +3,7 @@ const page_title_pt_br = "Shutter Notes | Ajuda"
 const main_title_pt_br = "Perguntas Frequentes"
 
 const q1_title_pt_br = "O que eu posso fazer com o Shutter Notes?"
-const q1_text_pt_br = "Você pode fazer anotações sobre qualquer coisa relacionada à uma foto tirada enquanto você fotografa e marcar uma sequência de fotos para as quais as notas se aplicam. Pode ser qualquer coisa, como o lugar onde você está, o que está vendo ou o acessório que está usando. Posteriormente, quando estiver processando suas fotos, você não precisará se lembrar de todas essas informações, elas estarão disponíveis em duas fotos marcando o início e o fim da sequência de fotos para as quais você fez as anotações."
+const q1_text_pt_br = "Você pode fazer anotações sobre qualquer coisa enquanto você fotografa e marcar uma sequência de fotos para as quais as notas se aplicam. Pode ser o lugar onde você está, o que está vendo ou o acessório que está usando. Posteriormente, quando estiver processando suas fotos, você não precisará se lembrar de todas essas informações, elas estarão disponíveis em duas fotos marcando o início e o fim da sequência de fotos para as quais você fez as anotações."
 
 const q2_title_pt_br = "O que é uma Nota Simples?"
 const q2_text_pt_br = "É uma anotação que você faz da mesma forma que faria se estivesse usando um bloco de notas, basta escrever algumas informações relacionadas à foto que está tirando para lembrar mais tarde."
@@ -19,5 +19,3 @@ const q5_text_pt_br = "Primeiro, na gaveta de navegação, selecione a opção <
 
 const q6_title_pt_br = "E se eu tiver uma pergunta diferente?"
 const q6_text_pt_br = "Basta clicar no ícone do envelope acima e me enviar uma mensagem que responderei o mais breve possível."
-
-

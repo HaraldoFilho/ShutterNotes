@@ -78,7 +78,7 @@ public class HelpActivity extends AppCompatActivity {
 
         if (id == R.id.action_send_question) {
             String[] address = new String[Constants.FEEDBACK_ARRAY_SIZE];
-            address[Constants.LIST_HEAD] = getString(R.string.info_feedback_email);
+            address[Constants.LIST_HEAD] = getString(R.string.info_help_email);
             composeEmail(address, getString(R.string.action_question) + " " + getString(R.string.action_about_application)
                     + " " + getString(R.string.info_app_name));
         }

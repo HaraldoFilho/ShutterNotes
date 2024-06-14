@@ -3,6 +3,7 @@
 <head>
   <title id="title"></title>
   <meta charset="UTF-8"/>
+  <link rel="shortcut icon" type="image/x-icon" href="../res/favicon.ico">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script src="res/strings_en-us.js"></script>
   <script src="res/strings_pt-br.js"></script>
@@ -18,17 +19,34 @@
   console.log ("User language is: " + userLang);
 
   if (userLang == 'pt-BR') {
-    document.getElementById('title').innerText = title_pt_br;
+    document.getElementById('title').innerText = "Shutter Notes | " + title_pt_br;
     document.getElementById('h1').innerHTML = title_pt_br;
     document.getElementById('text').innerHTML = text_pt_br;
   } else {
-    document.getElementById('title').innerText = title_en_us;
+    document.getElementById('title').innerText = "Shutter Notes | " + title_en_us;
     document.getElementById('h1').innerHTML = title_en_us;
     document.getElementById('text').innerHTML = text_en_us;
   }
 
 </script>
 
+<!-- Default Statcounter code for Shutter Notes
+https://shutternotes.app -->
+<script type="text/javascript">
+var sc_project=13008305;
+var sc_invisible=1;
+var sc_security="ad340221";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics
+Made Easy - Statcounter" href="https://statcounter.com/"
+target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/13008305/0/ad340221/1/"
+alt="Web Analytics Made Easy - Statcounter"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
 
 </body>
 </html>

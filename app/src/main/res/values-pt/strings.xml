@@ -3,6 +3,7 @@
 
     <string name="info_rights_reserved_text">Todos os Direitos Reservados</string>
     <string name="navigation_drawer_close">Fechar drawer</string>
+    <string name="info_bmc">Me page um café!</string>
     <string name="navigation_drawer_open">Abrir drawer</string>
     <string name="nav_header_title">Haraldo Albergaria</string>
     <string name="nav_header_desc">ShutterNotes</string>

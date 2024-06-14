@@ -1,3 +1,7 @@
+#### **1.2.4**
+- Updated app webpage.
+- Minor improvements.
+
 #### **1.2.3**
 - Added options on Gear Note screen to import/export gear list from/to a file.
 - Added help page.
