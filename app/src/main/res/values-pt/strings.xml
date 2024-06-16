@@ -175,5 +175,6 @@
     <string name="alert_message_import_file">A lista de acessórios atual será substituída pela lista do arquivo\n</string>
     <string name="toast_empty_list">A lista está vazia</string>
     <string name="action_export_file_name">lista_de_acessórios.txt</string>
+    <string name="toast_browser_not_found">Navegador web não encontrado</string>
 
 </resources>

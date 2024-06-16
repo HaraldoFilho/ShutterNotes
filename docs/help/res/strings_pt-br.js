@@ -17,5 +17,8 @@ const q4_text_pt_br = "É o recurso mais bacana do app, você pode adicionar tod
 const q5_title_pt_br = "Como eu posso conectar minha conta do Flickr?"
 const q5_text_pt_br = "Primeiro, na gaveta de navegação, selecione a opção <i>Conta do Flickr</i>. Em seguida, faça login na sua conta e uma página será aberta para que você autorize o aplicativo a acessar os dados da sua conta. Basta clicar no botão <i>OK, I\'LL AUTHORIZE IT</i> e outra página será aberta com um código (talvez você precise mover a página um pouco para a esquerda para ver o código inteiro). Basta digitar o código (não é necessário digitar os traços) na caixa na parte inferior e clicar em <i>CONECTAR CONTA</i>."
 
-const q6_title_pt_br = "E se eu tiver uma pergunta diferente?"
-const q6_text_pt_br = "Basta clicar no ícone do envelope acima e me enviar uma mensagem que responderei o mais breve possível."
+const q6_title_pt_br = "I gostei muito desse aplicativo gratuito, como eu posso dizer obrigado?"
+const q6_text_pt_br = "Se você achou esse aplicativo útil, considere \"<a href=\"https://buymeacoffee.com/haraldo\">pagar um café</a>\" para o desenvolvedor, ele ficará muito grato!"
+
+const q7_title_pt_br = "E se eu tiver uma pergunta diferente?"
+const q7_text_pt_br = "Basta clicar no ícone do envelope acima e me enviar uma mensagem que tentarei responder o mais breve possível."

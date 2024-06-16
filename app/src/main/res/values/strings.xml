@@ -7,8 +7,8 @@
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.2.4</string>
-    <string name="version_code" translatable="false">124</string>
+    <string name="version_number" translatable="false">1.3.0</string>
+    <string name="version_code" translatable="false">130</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
@@ -184,6 +184,7 @@
     <string name="toast_imported">Gear list imported!</string>
     <string name="toast_empty_list">List is empty</string>
     <string name="toast_file_not_found">File not found</string>
+    <string name="toast_browser_not_found">Web browser not found</string>
 
     <!-- Notification -->
     <string name="notify_channel_name">Upload to Flickr</string>

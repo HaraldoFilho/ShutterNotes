@@ -1,3 +1,7 @@
+#### **1.3.0**
+- Added "Buy me a coffee" button on About screen.
+- Updated app help page.
+
 #### **1.2.4**
 - Updated app webpage.
 - Minor improvements.

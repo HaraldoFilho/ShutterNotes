@@ -17,5 +17,8 @@ const q4_text_en_us = "It is the most cool feature of the app, you can add all t
 const q5_title_en_us = "How can I connect my Flickr account?"
 const q5_text_en_us = "First, in the navigation drawer, select the <i>Flickr Account</i> option. Then, login to your account and a page will open so you can authorize the app to access your account data. Just click on the <i>OK, I\'LL AUTHORIZE IT</i> button and another page will open with a code (maybe you will need to move the page a little to the left to see the entire code). Just type the code (you don\'t need to type the dashs) in the box on the bottom and click on <i>CONNECT ACCOUNT</i>."
 
-const q6_title_en_us = "What if I have a different question?"
-const q6_text_en_us = "Just click on the mail icon above and send me a message, I will answered it as soon as possible."
+const q6_title_en_us = "I really liked this free app, how I can say thank you?"
+const q6_text_en_us = "If you find this app useful, consider \"<a href=\"https://buymeacoffee.com/haraldo\">buying a coffee</a>\" to the developer, it will be greatly appreciated!"
+
+const q7_title_en_us = "What if I have a different question?"
+const q7_text_en_us = "Just click on the mail icon above and send me a message, I will try to answer it as soon as possible."

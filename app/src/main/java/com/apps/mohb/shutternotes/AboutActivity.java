@@ -13,13 +13,16 @@
 package com.apps.mohb.shutternotes;
 
 import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -39,6 +42,18 @@ public class AboutActivity extends AppCompatActivity {
         TextView version = findViewById(R.id.textAppVersion);
         String versionText = getString(R.string.version_name) + Constants.SPACE + getString(R.string.version_number);
         version.setText(versionText);
+
+        Button buttonBmc = findViewById(R.id.buttonBmc);
+
+        buttonBmc.setOnClickListener(view -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://buymeacoffee.com/haraldo"));
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                Toast.makeText(this, R.string.toast_browser_not_found, Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
 
@@ -94,8 +109,6 @@ public class AboutActivity extends AppCompatActivity {
 
     // Compose a e-mail to send a question
     private void composeEmail(String[] addresses, String subject) {
-        Log.d(Constants.LOG_DEBUG_TAG, "Address: " + addresses[0]);
-        Log.d(Constants.LOG_DEBUG_TAG, "Subject: " + subject);
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
