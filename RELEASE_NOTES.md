@@ -1,3 +1,7 @@
+#### **1.3.1**
+- Increased size of 'Buy me a coffee' button at About screen.
+- Fixed bug on Flickr account connection due to code optimization.
+
 #### **1.3.0**
 - Added "Buy me a coffee" button on About screen.
 - Updated app help page.

@@ -11,6 +11,9 @@
 -keepclassmembers class com.apps.mohb.shutternotes.FlickrAccountActivity {
    public *;
 }
+-keepclassmembers class com.apps.mohb.shutternotes.HelpActivity {
+   public *;
+}
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
@@ -27,4 +30,5 @@
 -dontwarn org.slf4j.impl.StaticLoggerBinder
 -dontwarn jakarta.xml.bind.DatatypeConverter
 -dontwarn javax.xml.bind.DatatypeConverter
-
+-dontwarn java.beans.ConstructorProperties
+-dontwarn java.beans.Transient
