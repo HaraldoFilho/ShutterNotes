@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrAccountActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/17/24, 11:02 AM
  *
  *  -----------------------------------------------------------
  */
@@ -205,12 +205,12 @@ public class FlickrAccountActivity extends AppCompatActivity {
             @Override
             public void onPageFinished(WebView view, String url) {
                 // Javascript code to extract html content from Flickr pages
-                // If user is PRO, the token key is in the 7th (index 6) span element
+                // If user is PRO, the token key is in the 9th (index 8) span element
                 view.loadUrl("javascript:window.HtmlViewer.getTokenKey" +
-                        "(document.getElementsByTagName('span')[6].innerHTML);");
-                // If user is NOT PRO, the token key is in the 8th (index 7) span element
+                        "(document.getElementsByTagName('span')[8].innerHTML);");
+                // If user is NOT PRO, the token key is in the 10th (index 9) span element
                 view.loadUrl("javascript:window.HtmlViewer.getTokenKey" +
-                        "(document.getElementsByTagName('span')[7].innerHTML);");
+                        "(document.getElementsByTagName('span')[9].innerHTML);");
             }
 
         });

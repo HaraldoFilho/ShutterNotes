@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrApi.java
- *  Last modified : 6/8/24, 8:20 PM
+ *  Last modified : 6/17/24, 10:43 AM
  *
  *  -----------------------------------------------------------
  */

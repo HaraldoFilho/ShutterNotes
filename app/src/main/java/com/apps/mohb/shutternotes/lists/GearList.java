@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearList.java
- *  Last modified : 6/13/24, 5:42 PM
+ *  Last modified : 6/17/24, 9:46 AM
  *
  *  -----------------------------------------------------------
  */

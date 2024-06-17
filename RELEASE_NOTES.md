@@ -1,3 +1,8 @@
+#### **1.4.0**
+Production release: 1.4.0
+- Fixed flickr account auto connection which had stopped working after changes on authorization page html code.
+- Edited help pages.
+
 #### **1.3.1**
 - Increased size of 'Buy me a coffee' button at About screen.
 - Fixed bug on Flickr account connection due to code optimization.
