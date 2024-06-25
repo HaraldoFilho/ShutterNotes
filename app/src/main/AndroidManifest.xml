@@ -8,6 +8,7 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- Needed to Android 5.0 (API level 21) or higher. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-feature android:name="android.hardware.location.gps" />
     <uses-feature android:name="android.hardware.location.network" />
     <!--
          The Maps API requires the additional following permissions to be set
@@ -27,7 +28,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning,DiscouragedApi,LockedOrientationActivity">
 
 
         <meta-data
@@ -53,34 +54,44 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".SimpleNoteActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_simple_note" />
         <activity
             android:name=".GearNoteActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_gear_note" />
         <activity
             android:name=".FlickrNoteActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_flickr_note" />
         <activity
             android:name=".SimpleNotesListActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_simple_notes"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".GearNotesListActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_gear_notes"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlickrNotesListActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_flickr_notes"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FlickrPhotosetsListActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_flickr_photosets"
             android:parentActivityName=".FlickrNotesListActivity" />
         <activity
             android:name=".FlickrUploadToPhotosActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_flickr_upload" />
         <activity
             android:name=".ReturnToForegroundActivity" />
@@ -88,28 +99,35 @@
             android:name=".FlickrPhotoActivity" />
         <activity
             android:name=".ArchiveActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_archive"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".FullscreenNoteActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_note_fullscreen"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".FlickrAccountActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_flickr_connect" />
         <activity
             android:name=".ClockActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_clock" />
         <activity
             android:name=".SettingsActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_settings" />
         <activity
             android:name=".HelpActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_help"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".AboutActivity"
+            android:screenOrientation="portrait"
             android:label="@string/activity_title_about"
             android:parentActivityName=".MainActivity" />
     </application>

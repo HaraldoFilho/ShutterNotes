@@ -1,3 +1,7 @@
+#### **1.4.1**
+- Removed support for Chromebooks
+- Fixed orientation to portrait
+
 #### **1.4.0**
 Production release: 1.4.0
 - Fixed flickr account auto connection which had stopped working after changes on authorization page html code.

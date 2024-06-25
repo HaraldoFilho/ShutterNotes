@@ -7,8 +7,8 @@
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.4.0</string>
-    <string name="version_code" translatable="false">140</string>
+    <string name="version_number" translatable="false">1.4.1</string>
+    <string name="version_code" translatable="false">141</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
