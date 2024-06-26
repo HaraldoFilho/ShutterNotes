@@ -5,14 +5,13 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FullscreenNoteActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 2:40 PM
  *
  *  -----------------------------------------------------------
  */
 
 package com.apps.mohb.shutternotes;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -21,7 +20,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 import android.util.TypedValue;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
@@ -31,7 +29,6 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
 
 import com.apps.mohb.shutternotes.fragments.dialogs.FullscreenTipAlertFragment;
@@ -50,6 +47,8 @@ import java.util.Objects;
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
+ *
+ * @noinspection unused, unused
  */
 public class FullscreenNoteActivity extends AppCompatActivity
         implements FullscreenTipAlertFragment.FullscreenTipDialogListener {
@@ -111,22 +110,6 @@ public class FullscreenNoteActivity extends AppCompatActivity
 
     private boolean mVisible;
     private final Runnable mHideRunnable = this::hide;
-
-    /**
-     * Touch listener to use for in-layout UI controls to delay hiding the
-     * system UI. This is to prevent the jarring behavior of controls going away
-     * while interacting with activity UI.
-     */
-    private final View.OnTouchListener mDelayHideTouchListener = new View.OnTouchListener() {
-        @SuppressLint("ClickableViewAccessibility")
-        @Override
-        public boolean onTouch(View view, MotionEvent motionEvent) {
-            if (AUTO_HIDE) {
-                delayedHide(AUTO_HIDE_DELAY_MILLIS);
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,7 +190,7 @@ public class FullscreenNoteActivity extends AppCompatActivity
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
-        delayedHide(100);
+        delayedHide();
     }
 
     private void toggle() {
@@ -268,16 +251,10 @@ public class FullscreenNoteActivity extends AppCompatActivity
 
                     }
                     // go back when red screen is touched
-                    super.onBackPressed();
+                    finish();
                     break;
             }
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-        // do not go back when back button is pressed
-        super.onBackPressed();
     }
 
     private void hide() {
@@ -297,9 +274,9 @@ public class FullscreenNoteActivity extends AppCompatActivity
      * Schedules a call to hide() in delay milliseconds, canceling any
      * previously scheduled calls.
      */
-    private void delayedHide(int delayMillis) {
+    private void delayedHide() {
         mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
+        mHideHandler.postDelayed(mHideRunnable, 100);
     }
 
     @Override
@@ -315,7 +292,7 @@ public class FullscreenNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onFullscreenTipDialogPositiveClick(DialogFragment dialog) {
+    public void onFullscreenTipDialogPositiveClick() {
         instructionsFirstShow.edit().putBoolean(Constants.KEY_FIRST_SHOW, false).apply();
     }
 

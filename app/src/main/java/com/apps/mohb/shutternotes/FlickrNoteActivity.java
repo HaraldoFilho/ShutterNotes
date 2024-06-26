@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrNoteActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/26/24, 11:10 AM
  *
  *  -----------------------------------------------------------
  */
@@ -30,7 +30,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
 
 import com.apps.mohb.shutternotes.fragments.dialogs.FlickrNoteTipAlertFragment;
@@ -76,6 +75,7 @@ public class FlickrNoteActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_flickr_note);
 
         settings = PreferenceManager.getDefaultSharedPreferences(this);
@@ -97,7 +97,7 @@ public class FlickrNoteActivity extends AppCompatActivity
             startActivity(intent);
         });
 
-        buttonCancel.setOnClickListener(view -> onBackPressed());
+        buttonCancel.setOnClickListener(view -> finish());
 
         buttonClear.setOnClickListener(view -> {
             editTextTitle.setText(Constants.EMPTY);
@@ -178,6 +178,25 @@ public class FlickrNoteActivity extends AppCompatActivity
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.mapFragmentFlickrNote);
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
+    }
+
+    private void cancelAllToasts() {
+        try {
+            mustType.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+        try {
+            locationUpdated.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
     }
 
     // OPTIONS MENU
@@ -311,18 +330,7 @@ public class FlickrNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            mustType.cancel();
-            locationUpdated.cancel();
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
-        }
-    }
-
-    @Override
-    public void onFlickrNoteTipDialogPositiveClick(DialogFragment dialog) {
+    public void onFlickrNoteTipDialogPositiveClick() {
         warningFirstShow.edit().putBoolean(Constants.KEY_FIRST_SHOW, false).apply();
     }
 
@@ -340,7 +348,6 @@ public class FlickrNoteActivity extends AppCompatActivity
                             lastLatitude = location.getLatitude();
                             lastLongitude = location.getLongitude();
                         } else {
-                            lastLongitude = Constants.DEFAULT_LATITUDE;
                             lastLongitude = Constants.DEFAULT_LONGITUDE;
                         }
                         if (mapFragment != null) {

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GridViewWithHeaderAndFooter.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 11:07 AM
  *
  *  -----------------------------------------------------------
  */
@@ -16,7 +16,6 @@ import android.content.Context;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -38,7 +37,6 @@ import java.util.ArrayList;
  */
 public class GridViewWithHeaderAndFooter extends GridView {
 
-    public static boolean DEBUG = false;
     private OnItemClickListener mOnItemClickListener;
     private OnItemLongClickListener mOnItemLongClickListener;
 
@@ -46,11 +44,7 @@ public class GridViewWithHeaderAndFooter extends GridView {
      * A class that represents a fixed view in a list, for example a header at the top
      * or a footer at the bottom.
      */
-    private static class FixedViewInfo {
-        /**
-         * The view to add to the grid
-         */
-        public View view;
+    static class FixedViewInfo {
         public ViewGroup viewContainer;
         /**
          * The data backing the view. This is returned from {@link ListAdapter#getItem(int)}.
@@ -64,29 +58,21 @@ public class GridViewWithHeaderAndFooter extends GridView {
 
     private View mViewForMeasureRowHeight = null;
     private int mRowHeight = -1;
-    //log tag can be at most 23 characters
-    private static final String LOG_TAG = "GridViewHeaderAndFooter";
 
-    private final ArrayList<FixedViewInfo> mHeaderViewInfos = new ArrayList<FixedViewInfo>();
-    private final ArrayList<FixedViewInfo> mFooterViewInfos = new ArrayList<FixedViewInfo>();
+    private final ArrayList<FixedViewInfo> mHeaderViewInfos = new ArrayList<>();
+    private final ArrayList<FixedViewInfo> mFooterViewInfos = new ArrayList<>();
     private ItemClickHandler mItemClickHandler;
-
-    private void initHeaderGridView() {
-    }
 
     public GridViewWithHeaderAndFooter(Context context) {
         super(context);
-        initHeaderGridView();
     }
 
     public GridViewWithHeaderAndFooter(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initHeaderGridView();
     }
 
     public GridViewWithHeaderAndFooter(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        initHeaderGridView();
     }
 
     @Override
@@ -147,7 +133,6 @@ public class GridViewWithHeaderAndFooter extends GridView {
             fl.setLayoutParams(new AbsListView.LayoutParams(lyp.width, lyp.height));
         }
         fl.addView(v);
-        info.view = v;
         info.viewContainer = fl;
         info.data = data;
         info.isSelectable = isSelectable;
@@ -180,7 +165,6 @@ public class GridViewWithHeaderAndFooter extends GridView {
             fl.setLayoutParams(new AbsListView.LayoutParams(lyp.width, lyp.height));
         }
         fl.addView(v);
-        info.view = v;
         info.viewContainer = fl;
         info.data = data;
         info.isSelectable = isSelectable;
@@ -324,14 +308,14 @@ public class GridViewWithHeaderAndFooter extends GridView {
         private final DataSetObservable mDataSetObservable = new DataSetObservable();
         private final ListAdapter mAdapter;
         static final ArrayList<FixedViewInfo> EMPTY_INFO_LIST =
-                new ArrayList<FixedViewInfo>();
+                new ArrayList<>();
 
         // This ArrayList is assumed to NOT be null.
-        ArrayList<FixedViewInfo> mHeaderViewInfos;
-        ArrayList<FixedViewInfo> mFooterViewInfos;
+        final ArrayList<FixedViewInfo> mHeaderViewInfos;
+        final ArrayList<FixedViewInfo> mFooterViewInfos;
         private int mNumColumns = 1;
         private int mRowHeight = -1;
-        boolean mAreAllFixedViewsSelectable;
+        final boolean mAreAllFixedViewsSelectable;
         private final boolean mIsFilterable;
         private final boolean mCachePlaceHoldView = true;
         // From Recycle Bin or calling getView, this a question...
@@ -496,9 +480,6 @@ public class GridViewWithHeaderAndFooter extends GridView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            if (DEBUG) {
-                Log.d(LOG_TAG, String.format("getView: %s, reused: %s", position, convertView == null));
-            }
             // Header (negative positions will throw an ArrayIndexOutOfBoundsException)
             int numHeadersAndPlaceholders = getHeadersCount() * mNumColumns;
             if (position < numHeadersAndPlaceholders) {
@@ -599,16 +580,11 @@ public class GridViewWithHeaderAndFooter extends GridView {
                     type = adapterViewTypeStart + mHeaderViewInfos.size() + 1 + (footerPosition / mNumColumns + 1);
                 }
             }
-            if (DEBUG) {
-                Log.d(LOG_TAG, String.format("getItemViewType: pos: %s, result: %s", position, type));
-            }
             return type;
         }
 
         /**
          * content view, content view holder, header[0], header and footer placeholder(s)
-         *
-         * @return
          */
         @Override
         public int getViewTypeCount() {
@@ -619,9 +595,6 @@ public class GridViewWithHeaderAndFooter extends GridView {
                     offset += 1;
                 }
                 count += offset;
-            }
-            if (DEBUG) {
-                Log.d(LOG_TAG, String.format("getViewTypeCount: %s", count));
             }
             return count;
         }

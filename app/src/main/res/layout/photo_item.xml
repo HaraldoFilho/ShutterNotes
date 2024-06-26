@@ -5,7 +5,9 @@
     tools:ignore="ContentDescription"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/flickr_photo_thumb_size">
+    android:layout_height="@dimen/flickr_photo_thumb_size"
+    android:background="@drawable/item_tile"
+    android:elevation="@dimen/flickr_photo_item_elevation" >
 
     <ImageView
         android:id="@+id/imagePhoto"

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrNotesListActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 11:10 AM
  *
  *  -----------------------------------------------------------
  */
@@ -62,6 +62,7 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_flickr_notes_list);
 
         // Create list header and footer, that will insert spaces on top and bottom of the
@@ -94,7 +95,7 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
 
         mustSelect = Toast.makeText((this), R.string.toast_must_select, Toast.LENGTH_SHORT);
 
-        // Define form factor of notes items accorging to screen height in pixels
+        // Define form factor of notes items according to screen height in pixels
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
         listItemHeight = (int) (metrics.heightPixels / Constants.LIST_ITEM_HEIGHT_FACTOR);
 
@@ -106,9 +107,15 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
         unselectAllNotes();
         ArrayList<FlickrNote> flickrNotesList = notebook.getFlickrNotes();
         notesListGridView.invalidateViews();
-        FlickrNotesListAdapter notesAdapter = null;
+        FlickrNotesListAdapter notesAdapter;
         notesAdapter = new FlickrNotesListAdapter(this, flickrNotesList, listItemHeight);
         notesListGridView.setAdapter(notesAdapter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
     }
 
     @Override
@@ -118,6 +125,19 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
             archive.saveState();
             notebook.saveState();
         } catch (IOException e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+    }
+
+    private void cancelAllToasts() {
+        try {
+            mustSelect.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+        try {
+            allNotesArchived.cancel();
+        } catch (Exception e) {
             Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
         }
     }
@@ -233,18 +253,7 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            mustSelect.cancel();
-            allNotesArchived.cancel();
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
-        }
-    }
-
-    @Override
-    public void onNoteDeleteDialogPositiveClick(DialogFragment dialog) {
+    public void onNoteDeleteDialogPositiveClick() {
         notebook.removeFlickrNote(getCorrectPosition(menuInfo.position));
         notesListGridView.invalidateViews();
     }
@@ -255,7 +264,7 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onArchiveSelectedNotesDialogPositiveClick(DialogFragment dialog) {
+    public void onArchiveSelectedNotesDialogPositiveClick() {
         for (int i = notebook.getFlickrNotes().size() - 1; i >= 0; i--) {
             FlickrNote note = notebook.getFlickrNotes().get(i);
             if (note.isSelected()) {

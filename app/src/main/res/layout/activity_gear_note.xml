@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackgroundGearNote"
-    tools:context=".GearNoteActivity">
+    tools:context=".GearNoteActivity"
+    tools:ignore="Overdraw">
 
     <ListView
         android:id="@+id/gearList"
@@ -30,6 +31,16 @@
         android:background="@color/colorBackgroundWhite">
 
         <Button
+            android:id="@+id/buttonGearNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
             android:id="@+id/buttonGearNoteReset"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
@@ -46,16 +57,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_show"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/button_font_size" />
-
-        <Button
-            android:id="@+id/buttonGearNoteCancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/button_cancel"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 

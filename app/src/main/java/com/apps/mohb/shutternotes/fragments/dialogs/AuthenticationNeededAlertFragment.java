@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : AuthenticationNeededAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,9 +25,9 @@ import com.apps.mohb.shutternotes.R;
 public class AuthenticationNeededAlertFragment extends DialogFragment {
 
     public interface AuthenticationNeededAlertDialogListener {
-        void onAuthenticationNeededDialogPositiveClick(DialogFragment dialog);
+        void onAuthenticationNeededDialogPositiveClick();
 
-        void onAuthenticationNeededDialogNegativeClick(DialogFragment dialog);
+        void onAuthenticationNeededDialogNegativeClick();
     }
 
     private AuthenticationNeededAlertDialogListener mListener;
@@ -39,8 +39,8 @@ public class AuthenticationNeededAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.alert_title_authenticate).setMessage(R.string.alert_message_authenticate)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onAuthenticationNeededDialogPositiveClick(AuthenticationNeededAlertFragment.this))
-                .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onAuthenticationNeededDialogNegativeClick(AuthenticationNeededAlertFragment.this));
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onAuthenticationNeededDialogPositiveClick())
+                .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onAuthenticationNeededDialogNegativeClick());
 
         return builder.create();
 
@@ -55,7 +55,7 @@ public class AuthenticationNeededAlertFragment extends DialogFragment {
             mListener = (AuthenticationNeededAlertDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement AuthenticationNeededDialogListener");
         }
     }

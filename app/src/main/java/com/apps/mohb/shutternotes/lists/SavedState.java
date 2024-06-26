@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : SavedState.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -56,11 +56,6 @@ public class SavedState {
         } else {
             return readSimpleNotesJsonString(jsonSimpleNotes);
         }
-    }
-
-    // get a json string of simple notes list from memory
-    public String getSimpleNotesJsonState() {
-        return savedState.getString(Constants.SIMPLE_NOTES, Constants.EMPTY);
     }
 
 
@@ -144,11 +139,6 @@ public class SavedState {
         }
     }
 
-    // get a json string of gear notes list from memory
-    public String getGearNotesJsonState() {
-        return savedState.getString(Constants.GEAR_NOTES, Constants.EMPTY);
-    }
-
     // create a json string of a list of gear note items
     public String writeGearNotesJsonString(ArrayList<GearNote> gearNotes) throws IOException {
         StringWriter stringWriter = new StringWriter();
@@ -228,11 +218,6 @@ public class SavedState {
         } else {
             return readFlickrNotesJsonString(jsonFlickrNotes);
         }
-    }
-
-    // get a json string of flickr notes list from memory
-    public String getFlickrNotesJsonState() {
-        return savedState.getString(Constants.FLICKR_NOTES, Constants.EMPTY);
     }
 
     // create a json string of a list of flickr note items
@@ -390,11 +375,6 @@ public class SavedState {
         } else {
             return readGearListJsonString(jsonGearList);
         }
-    }
-
-    // get a json string of gear list from memory
-    public String getGearListJsonState() {
-        return savedState.getString(Constants.GEAR_LIST, Constants.EMPTY);
     }
 
     // create a json string of a list of gear items

@@ -15,7 +15,6 @@
         android:importantForAutofill="no"
         android:inputType="text"
         android:textSize="@dimen/edit_text_size"
-        tools:targetApi="o"
         tools:ignore="LabelFor" />
 
 </LinearLayout>

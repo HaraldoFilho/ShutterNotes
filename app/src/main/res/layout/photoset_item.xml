@@ -5,7 +5,9 @@
     tools:ignore="ContentDescription"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@drawable/item_tile"
+    android:elevation="@dimen/flickr_photoset_item_elevation">
 
     <ImageView
         android:id="@+id/imagePhotosetCover"

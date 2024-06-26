@@ -24,7 +24,7 @@
         android:paddingBottom="@dimen/simple_note_text_padding_bottom"
         android:singleLine="false"
         android:textSize="@dimen/simple_note_font_size"
-        tools:targetApi="o" />
+         />
 
     <LinearLayout
         android:id="@+id/buttonsSimpleNote"
@@ -34,7 +34,17 @@
         android:gravity="bottom"
         android:orientation="horizontal">
 
-       <Button
+        <Button
+            android:id="@+id/buttonSimpleNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
             android:id="@+id/buttonSimpleNoteClear"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
@@ -51,16 +61,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_show"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/button_font_size" />
-
-        <Button
-            android:id="@+id/buttonSimpleNoteCancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/button_cancel"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 

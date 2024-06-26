@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrApi.java
- *  Last modified : 6/17/24, 10:43 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -95,10 +95,6 @@ public class FlickrApi {
 
     public String getTokenSecret() {
         return tokenSecret;
-    }
-
-    public Auth getAuth() {
-        return auth;
     }
 
     public Auth checkAuthToken() {

@@ -23,7 +23,7 @@
         android:singleLine="true"
         android:textSize="@dimen/flickr_note_title_text_size"
         android:textStyle="bold"
-        tools:targetApi="o" />
+         />
 
     <EditText
         android:id="@+id/editTextFlickrNoteDescription"
@@ -42,7 +42,7 @@
         android:singleLine="false"
         android:text=""
         android:textSize="@dimen/flickr_note_description_text_size"
-        tools:targetApi="o" />
+         />
 
     <RelativeLayout
         android:id="@+id/flickrTags"
@@ -105,6 +105,16 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/buttonFlickrNoteCancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/button_cancel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/button_font_size" />
+
+        <Button
             android:id="@+id/buttonFlickrNoteClear"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="match_parent"
@@ -121,16 +131,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/button_show"
-            android:textColor="@color/colorPrimary"
-            android:textSize="@dimen/button_font_size" />
-
-        <Button
-            android:id="@+id/buttonFlickrNoteCancel"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/button_cancel"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/button_font_size" />
 

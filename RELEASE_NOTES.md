@@ -1,3 +1,12 @@
+#### **1.4.2**
+- Changed JDK version from 21 to 17.
+- Updated some dependencies versions.
+- Replaced deprecated onBackPressed method with oBackPressedCallback and removed it where it was not necessary.
+- Changed buttons order on notes screens.
+- Fixed code inspection warnings.
+- Replaced deprecated startActivityForResult method.
+- Removed custom Splash Screen.
+
 #### **1.4.1**
 - Removed support for Chromebooks
 - Fixed orientation to portrait

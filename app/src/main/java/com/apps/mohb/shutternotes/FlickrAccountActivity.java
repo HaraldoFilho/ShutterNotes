@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrAccountActivity.java
- *  Last modified : 6/17/24, 11:02 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -112,11 +112,23 @@ public class FlickrAccountActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
+    }
+
+    private void cancelAllToasts() {
         try {
             accountConnected.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+        try {
             typeCode.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+        try {
             wrongCode.cancel();
         } catch (Exception e) {
             Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
@@ -142,7 +154,7 @@ public class FlickrAccountActivity extends AppCompatActivity {
             accountConnected.show();
 
             if (callerActivity != Constants.ACTIVITY_MAIN) {
-                onBackPressed();
+                cancelAllToasts();
             } else {
                 setContentView(R.layout.activity_flickr_account_connected);
                 flickrWebView = findViewById(R.id.webViewFlickrProfile);
@@ -164,7 +176,7 @@ public class FlickrAccountActivity extends AppCompatActivity {
 
     private void showUnableToCommunicate() {
         Toast.makeText(this, R.string.toast_unable_to_communicate, Toast.LENGTH_SHORT).show();
-        onBackPressed();
+        cancelAllToasts();
     }
 
     private void setButtonConnect() {
@@ -180,7 +192,7 @@ public class FlickrAccountActivity extends AppCompatActivity {
     }
 
     // Insert token key in text field and execute get access token
-    private void insertTokenKey(String key) throws Exception {
+    private void insertTokenKey(String key) {
         codeTextView.setText(key);
         flickrApi.setTokenKey(key);
         setButtonConnecting();

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrUploadToPhotosActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -16,8 +16,6 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,6 +24,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
@@ -87,6 +86,16 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                exitActivity();
+            }
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
+
         setContentView(R.layout.activity_flickr_upload_to_photos);
 
         View listHeader = getLayoutInflater().inflate(R.layout.list_header, photosListView);
@@ -154,7 +163,7 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
         } catch (Exception e) {
             Toast unableToCommunicate = Toast.makeText(this, R.string.toast_unable_to_communicate, Toast.LENGTH_SHORT);
             unableToCommunicate.show();
-            onBackPressed();
+            exitActivity();
         }
 
         notificationManager = getSystemService(NotificationManager.class);
@@ -168,7 +177,7 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
                 .setContentTitle(getBaseContext().getResources().getString(R.string.notify_title))
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
-                .setNotificationSilent()
+                .setSilent(true)
                 .setOngoing(true)
                 .setAutoCancel(true);
 
@@ -176,6 +185,19 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
 
         notificationBuilder.setProgress(selectedSetSize, progress, false);
 
+    }
+
+    private void exitActivity() {
+        try {
+            if ((progress > 0 && progress < selectedSetSize) || inBackground) {
+                RunInBackgroundAlertFragment runInBackgroundAlertFragment = new RunInBackgroundAlertFragment();
+                runInBackgroundAlertFragment.show(getSupportFragmentManager(), "RunInBackgroundDialogFragment");
+            } else {
+                finish();
+            }
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
     }
 
     @Override
@@ -192,7 +214,7 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
         }
 
         if (uploadFinished && updatedPhotos.isEmpty()) {
-            onBackPressed();
+            exitActivity();
         }
 
     }
@@ -203,20 +225,6 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
         inBackground = true;
         if (progress > 0 && progress < selectedSetSize) {
             notificationManager.notify(Constants.NOTIFICATION_SILENT_ID, notificationBuilder.build());
-        }
-    }
-
-    @Override
-    public void onBackPressed() {
-        try {
-            if ((progress > 0 && progress < selectedSetSize) || inBackground) {
-                RunInBackgroundAlertFragment runInBackgroundAlertFragment = new RunInBackgroundAlertFragment();
-                runInBackgroundAlertFragment.show(getSupportFragmentManager(), "RunInBackgroundDialogFragment");
-            } else {
-                super.onBackPressed();
-            }
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
         }
     }
 
@@ -340,15 +348,10 @@ public class FlickrUploadToPhotosActivity extends BackgroundTaskActivity impleme
                     .setContentIntent(pendingIntent)
                     .setAutoCancel(true);
 
-            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-                Uri notificationSound = Uri.parse(Objects.requireNonNull(settings.getString(Constants.PREF_KEY_NOTIF_SOUND, Constants.PREF_DEF_NOTIF_SOUND)));
-                notificationBuilder.setSound(notificationSound);
-            }
-
             if (!inBackground) {
                 if (updatedPhotos.isEmpty()) {
                     Toast.makeText(getBaseContext(), R.string.notify_no_photos_updated, Toast.LENGTH_SHORT).show();
-                    onBackPressed();
+                    exitActivity();
                 } else {
 
                     Toast.makeText(getBaseContext(), updatedPhotosText, Toast.LENGTH_SHORT).show();

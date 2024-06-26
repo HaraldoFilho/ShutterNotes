@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : DeleteAllAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class DeleteAllAlertFragment extends DialogFragment {
 
     public interface DeleteAllAlertDialogListener {
-        void onDeleteAllDialogPositiveClick(DialogFragment dialog);
+        void onDeleteAllDialogPositiveClick();
 
         void onDeleteAllDialogNegativeClick(DialogFragment dialog);
     }
@@ -39,7 +39,7 @@ public class DeleteAllAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.alert_title_delete_all_items).setMessage(R.string.alert_message_no_undone)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onDeleteAllDialogPositiveClick(DeleteAllAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onDeleteAllDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onDeleteAllDialogNegativeClick(DeleteAllAlertFragment.this));
 
         return builder.create();
@@ -55,7 +55,7 @@ public class DeleteAllAlertFragment extends DialogFragment {
             mListener = (DeleteAllAlertDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement DeleteAllDialogListener");
         }
     }

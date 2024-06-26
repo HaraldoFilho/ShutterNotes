@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : SimpleNotesListActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -57,6 +57,7 @@ public class SimpleNotesListActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_simple_notes_list);
 
         // Create list header and footer, that will insert spaces on top and bottom of the
@@ -84,7 +85,7 @@ public class SimpleNotesListActivity extends AppCompatActivity implements
             }
         });
 
-        // Define form factor of notes items accorging to screen height in pixels
+        // Define form factor of notes items according to screen height in pixels
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
         int listItemHeight = (int) (metrics.heightPixels / Constants.LIST_ITEM_HEIGHT_FACTOR);
 
@@ -95,12 +96,26 @@ public class SimpleNotesListActivity extends AppCompatActivity implements
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
         try {
             archive.saveState();
             notebook.saveState();
         } catch (IOException e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+    }
+
+    private void cancelAllToasts() {
+        try {
+            allNotesArchived.cancel();
+        } catch (Exception e) {
             Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
         }
     }
@@ -176,17 +191,7 @@ public class SimpleNotesListActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            allNotesArchived.cancel();
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
-        }
-    }
-
-    @Override
-    public void onNoteDeleteDialogPositiveClick(DialogFragment dialog) {
+    public void onNoteDeleteDialogPositiveClick() {
         notebook.removeSimpleNote(getCorrectPosition(menuInfo.position));
         notesListGridView.invalidateViews();
         try {
@@ -202,7 +207,7 @@ public class SimpleNotesListActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onArchiveAllNotesDialogPositiveClick(DialogFragment dialog) {
+    public void onArchiveAllNotesDialogPositiveClick() {
         for (int i = notebook.getSimpleNotes().size() - 1; i >= 0; i--) {
             archive.addNote(notebook.getSimpleNotes().get(i));
             notebook.getSimpleNotes().remove(i);

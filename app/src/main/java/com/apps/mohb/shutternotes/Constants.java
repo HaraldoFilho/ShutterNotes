@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : Constants.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 11:02 AM
  *
  *  -----------------------------------------------------------
  */
@@ -47,7 +47,6 @@ public class Constants {
     public static final String JSON_TAGS = "tags";
     public static final String JSON_LATITUDE = "latitude";
     public static final String JSON_LONGITUDE = "longitude";
-    public static final String GEAR_LIST_BACKUP_FILE = "gear_list.json";
 
     // Date
     public static final String DATE_FORMAT = "yyyy:MM:dd HH:mm:ss";
@@ -128,7 +127,6 @@ public class Constants {
     public static final String EMPTY = "";
     public static final String SPACE = " ";
     public static final String COMMA = ", ";
-    public static final String COLON = ": ";
     public static final String DASH = "-";
     public static final String SLASH = "/";
     public static final String QUOTE = "\"";
@@ -156,8 +154,6 @@ public class Constants {
     public static final double FULL_SCREEN_TEXT_LINE_SPACING = 1.25;
 
     public static final String PREF_KEY_NOTIF_SOUND = "NOTIF_SOUND";
-    public static final String PREF_DEF_NOTIF_SOUND = "0";
-    public static final int PREF_NOTIF_SOUND_SILENT = 0;
 
     public static final String PREF_KEY_WHAT_SHOW = "WHAT_SHOW";
     public static final String PREF_SHOW_TITLE = "1";
@@ -180,10 +176,6 @@ public class Constants {
     public static final String PREF_KEY_ARCHIVE_NOTES = "ARCHIVE_NOTES";
 
     public static final int REQUEST_CODE_RINGTONE = 1;
-
-    public static final int CREATE_FILE = 1;
-    public static final int OPEN_FILE = 2;
-
 
     // Log tags
     public static final String LOG_DEBUG_TAG = "DEBUG_NOTES";

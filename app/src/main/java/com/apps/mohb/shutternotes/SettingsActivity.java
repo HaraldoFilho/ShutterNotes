@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : SettingsActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 11:16 AM
  *
  *  -----------------------------------------------------------
  */
@@ -23,6 +23,7 @@ import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
@@ -40,7 +41,7 @@ import java.util.Objects;
 
 
 /*
- * A {@link PreferenceActivity} that presents a set of application settings. On
+ * A link PreferenceActivity that presents a set of application settings. On
  * handset devices, settings are presented as a single list. On tablets,
  * settings are split by category, with category headers shown to the left of
  * the list of settings.
@@ -140,7 +141,7 @@ public class SettingsActivity extends AppCompatActivity implements
         int id = item.getItemId();
 
         if (id == android.R.id.home) {
-            onBackPressed();
+            finish();
         } else if (id == R.id.action_defaults) {
             // Reset to defaults
             DialogFragment alertDialog = new PreferencesResetAlertFragment();
@@ -254,15 +255,7 @@ public class SettingsActivity extends AppCompatActivity implements
             uploadCategory.addPreference(overwriteTagsPreference);
 
             // Notification sound
-            Preference notificationSoundPreference = new Preference(context);
-            notificationSoundPreference.setTitle(R.string.pref_title_notif_sound);
-            notificationSoundPreference.setOnPreferenceClickListener(preference -> {
-                Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
-                intent.putExtra(Settings.EXTRA_APP_PACKAGE, requireActivity().getPackageName());
-                intent.putExtra(Settings.EXTRA_CHANNEL_ID, Constants.NOTIFICATION_CHANNEL);
-                startActivity(intent);
-                return false;
-            });
+            Preference notificationSoundPreference = getNotificationSoundPreference(context);
 
             uploadCategory.addPreference(notificationSoundPreference);
 
@@ -278,6 +271,19 @@ public class SettingsActivity extends AppCompatActivity implements
             bindPreferenceSummaryToValue(Objects.requireNonNull(findPreference(Constants.PREF_KEY_OVERWRITE_TAGS)));
         }
 
+        private @NonNull Preference getNotificationSoundPreference(Context context) {
+            Preference notificationSoundPreference = new Preference(context);
+            notificationSoundPreference.setTitle(R.string.pref_title_notif_sound);
+            notificationSoundPreference.setOnPreferenceClickListener(preference -> {
+                Intent intent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
+                intent.putExtra(Settings.EXTRA_APP_PACKAGE, requireActivity().getPackageName());
+                intent.putExtra(Settings.EXTRA_CHANNEL_ID, Constants.NOTIFICATION_CHANNEL);
+                startActivity(intent);
+                return false;
+            });
+            return notificationSoundPreference;
+        }
+
     }
 
     @Override
@@ -285,30 +291,25 @@ public class SettingsActivity extends AppCompatActivity implements
         if (requestCode == Constants.REQUEST_CODE_RINGTONE && data != null) {
             Uri ringtone = data.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
             if (ringtone != null) {
-                setRingtonPreferenceValue(ringtone.toString(), this); // TODO
+                setRingtonePreferenceValue(ringtone.toString(), this); // TODO
             } else {
                 // "Silent" was selected
-                setRingtonPreferenceValue("", this); // TODO
+                setRingtonePreferenceValue("", this); // TODO
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
 
-    private static void setRingtonPreferenceValue(String toString, Context context) {
+    private static void setRingtonePreferenceValue(String toString, Context context) {
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
         defaultSharedPreferences.edit().putString(Constants.PREF_KEY_NOTIF_SOUND, toString).apply();
-    }
-
-    private static String getRingtonePreferenceValue(Context context) {
-        SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-        return defaultSharedPreferences.getString(Constants.PREF_KEY_NOTIF_SOUND, Constants.PREF_DEF_NOTIF_SOUND);
     }
 
     // RESET TO DEFAULTS DIALOG
 
     @Override // Yes
-    public void onAlertDialogPositiveClick(DialogFragment dialog) {
+    public void onAlertDialogPositiveClick() {
         // Clear settings on memory
         PreferenceManager.getDefaultSharedPreferences(this).edit().clear().apply();
 

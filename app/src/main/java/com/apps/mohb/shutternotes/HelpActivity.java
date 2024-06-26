@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : HelpActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -23,6 +23,7 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -35,6 +36,21 @@ public class HelpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (webView.canGoBack()) {
+                    // If can, go back
+                    // to the previous page
+                    webView.goBack();
+                } else {
+                    finish();
+                }
+            }
+        };
+
+        getOnBackPressedDispatcher().addCallback(this, onBackPressedCallback);
+
         bundle = getIntent().getExtras();
 
         // create webView that will show options_help page
@@ -46,23 +62,12 @@ public class HelpActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
     protected void onResume() {
         super.onResume();
         // load options_help page in webView
         String helpUrl = getString(R.string.url_website) + bundle.getString(Constants.KEY_URL);
         Log.i(Constants.LOG_INFO_TAG, "Help url: " + helpUrl);
         webView.loadUrl(helpUrl);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        // cancel toast if page if exit options_help screen
     }
 
     @Override
@@ -93,19 +98,6 @@ public class HelpActivity extends AppCompatActivity {
         intent.putExtra(Intent.EXTRA_EMAIL, addresses);
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         startActivity(intent);
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        if (webView.canGoBack()) {
-            // If can, go back
-            // to the previous page
-            webView.goBack();
-        } else {
-            super.onBackPressed();
-        }
-
     }
 
     @SuppressLint("SetJavaScriptEnabled")

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrNoteTipAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class FlickrNoteTipAlertFragment extends DialogFragment {
 
     public interface FlickrNoteTipDialogListener {
-        void onFlickrNoteTipDialogPositiveClick(DialogFragment dialog);
+        void onFlickrNoteTipDialogPositiveClick();
     }
 
     private FlickrNoteTipDialogListener mListener;
@@ -37,7 +37,7 @@ public class FlickrNoteTipAlertFragment extends DialogFragment {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder.setTitle(R.string.dialog_warning_title).setMessage(R.string.dialog_warning_flickr_note_message)
-                .setPositiveButton(R.string.dialog_warning_button_ok, (dialog, id) -> mListener.onFlickrNoteTipDialogPositiveClick(FlickrNoteTipAlertFragment.this));
+                .setPositiveButton(R.string.dialog_warning_button_ok, (dialog, id) -> mListener.onFlickrNoteTipDialogPositiveClick());
 
         return alertDialogBuilder.create();
 
@@ -52,7 +52,7 @@ public class FlickrNoteTipAlertFragment extends DialogFragment {
             mListener = (FlickrNoteTipDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement FlickrNoteTipDialogListener");
         }
     }

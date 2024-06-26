@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearNoteActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 2:36 PM
  *
  *  -----------------------------------------------------------
  */
@@ -29,6 +29,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.DialogFragment;
 
@@ -64,6 +66,7 @@ public class GearNoteActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_gear_note);
 
         View listHeader = getLayoutInflater().inflate(R.layout.list_header, gearListView);
@@ -126,7 +129,7 @@ public class GearNoteActivity extends AppCompatActivity
             Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
         }
 
-        buttonCancel.setOnClickListener(view -> onBackPressed());
+        buttonCancel.setOnClickListener(view -> finish());
 
         buttonReset.setOnClickListener(view -> {
             try {
@@ -163,7 +166,8 @@ public class GearNoteActivity extends AppCompatActivity
                     } catch (IOException e) {
                         Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
                     }
-                    onBackPressed();
+                    cancelAllToasts();
+                    finish();
                     break;
 
             }
@@ -174,7 +178,25 @@ public class GearNoteActivity extends AppCompatActivity
         // create notes list
         gearListView.setAdapter(gearNoteAdapter);
 
+    }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
+    }
+
+    private void cancelAllToasts() {
+        try {
+            mustPickup.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+        try {
+            reorderedItems.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
     }
 
     // CONTEXT MENU
@@ -290,18 +312,7 @@ public class GearNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            mustPickup.cancel();
-            reorderedItems.cancel();
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
-        }
-    }
-
-    @Override
-    public void onEditGearListDialogPositiveClick(DialogFragment dialog) {
+    public void onEditGearListDialogPositiveClick() {
         SharedPreferences gearTextEdit = this.getSharedPreferences(Constants.EDIT_GEAR_TEXT, Context.MODE_PRIVATE);
         int itemPosition = gearTextEdit.getInt(Constants.GEAR_ITEM_POSITION, Constants.NULL_POSITION);
         if (itemPosition < 0) {
@@ -334,7 +345,7 @@ public class GearNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onGearDeleteDialogPositiveClick(DialogFragment dialog) {
+    public void onGearDeleteDialogPositiveClick() {
         gearList.remove(getCorrectPosition(menuInfo.position));
         try {
             gearList.saveState(getApplicationContext(), Constants.GEAR_LIST_SAVED_STATE);
@@ -350,7 +361,7 @@ public class GearNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onDeleteAllDialogPositiveClick(DialogFragment dialog) {
+    public void onDeleteAllDialogPositiveClick() {
         gearList.getList().clear();
         gearListView.setAdapter(gearNoteAdapter);
         try {
@@ -366,7 +377,7 @@ public class GearNoteActivity extends AppCompatActivity
     }
 
     @Override
-    public void onRestoreBackupDialogPositiveClick(DialogFragment dialog) {
+    public void onRestoreBackupDialogPositiveClick() {
         openFile();
     }
 
@@ -382,58 +393,51 @@ public class GearNoteActivity extends AppCompatActivity
     }
 
 
-    // Request code for creating a PDF document.
+    // Request code for creating a txt document.
 
     private void createFile() {
         Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TITLE, R.string.action_export_file_name);
-        startActivityForResult(intent, Constants.CREATE_FILE);
+        createFile.launch(intent);
     }
 
     private void openFile() {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         intent.setType("text/plain");
-        startActivityForResult(intent, Constants.OPEN_FILE);
+        openFile.launch(intent);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode,
-                                 Intent resultData) {
-        super.onActivityResult(requestCode, resultCode, resultData);
-
-        if (resultData != null) {
-            Uri uri = resultData.getData();
-
-            switch (requestCode) {
-                case Constants.CREATE_FILE: {
-                    try {
-                        gearList.backupList(getApplicationContext(), uri);
-                        Toast.makeText(this, R.string.toast_exported, Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+    final ActivityResultLauncher<Intent> createFile =
+            registerForActivityResult(new
+                            ActivityResultContracts.StartActivityForResult(),
+                    (result) -> {
+                        Intent resultData = result.getData();
+                        try {
+                            assert result.getData() != null;
+                            gearList.backupList(getApplicationContext(), Uri.parse(String.valueOf(resultData.getData())));
+                            Toast.makeText(getBaseContext(), R.string.toast_exported, Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                }
-                break;
+            );
 
-                case Constants.OPEN_FILE: {
-                    try {
-                        gearList.getList().clear();
-                        gearList.restoreList(getApplicationContext(), uri);
-                        gearListView.setAdapter(gearNoteAdapter);
-                        Toast.makeText(this, R.string.toast_imported, Toast.LENGTH_SHORT).show();
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
+    final ActivityResultLauncher<Intent> openFile =
+            registerForActivityResult(new
+                            ActivityResultContracts.StartActivityForResult(),
+                    (result) -> {
+                        Intent resultData = result.getData();
+                        try {
+                            gearList.getList().clear();
+                            assert resultData != null;
+                            gearList.restoreList(getApplicationContext(), Uri.parse(String.valueOf(resultData.getData())));
+                            gearListView.setAdapter(gearNoteAdapter);
+                            Toast.makeText(getBaseContext(), R.string.toast_imported, Toast.LENGTH_SHORT).show();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                }
-                break;
-            }
-
-        } else {
-            Log.e(Constants.LOG_ERROR_TAG, "ERROR: No result data");
-        }
-    }
-
+            );
 }

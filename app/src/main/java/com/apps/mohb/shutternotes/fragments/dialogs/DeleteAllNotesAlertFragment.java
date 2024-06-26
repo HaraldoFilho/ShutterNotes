@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : DeleteAllNotesAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class DeleteAllNotesAlertFragment extends DialogFragment {
 
     public interface DeleteAllNotesAlertDialogListener {
-        void onDeleteAllNotesDialogPositiveClick(DialogFragment dialog);
+        void onDeleteAllNotesDialogPositiveClick();
 
         void onDeleteAllNotesDialogNegativeClick(DialogFragment dialog);
     }
@@ -39,7 +39,7 @@ public class DeleteAllNotesAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.alert_title_delete_all_notes).setMessage(R.string.alert_message_no_undone)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onDeleteAllNotesDialogPositiveClick(DeleteAllNotesAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onDeleteAllNotesDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onDeleteAllNotesDialogNegativeClick(DeleteAllNotesAlertFragment.this));
 
         return builder.create();
@@ -55,7 +55,7 @@ public class DeleteAllNotesAlertFragment extends DialogFragment {
             mListener = (DeleteAllNotesAlertDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement DeleteAllNotesDialogListener");
         }
     }

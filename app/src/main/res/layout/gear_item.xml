@@ -3,7 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/gear_item_tile"
+    android:elevation="@dimen/gear_note_item_elevation"
+    android:gravity="center" >
 
     <TextView
         android:id="@+id/gearView"
@@ -14,7 +17,7 @@
         android:layout_marginRight="@dimen/gear_note_item_margin"
         android:gravity="center"
         android:padding="@dimen/gear_note_item_text_padding"
-        android:textColor="@color/colorGreyText"
+        android:textColor="@color/colorBlackText"
         android:textStyle="bold" />
 
 </LinearLayout>

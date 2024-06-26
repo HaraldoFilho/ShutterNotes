@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : EditGearListDialogFragment.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -34,7 +34,7 @@ import java.util.Objects;
 public class EditGearListDialogFragment extends DialogFragment {
 
     public interface EditGearListDialogListener {
-        void onEditGearListDialogPositiveClick(DialogFragment dialog);
+        void onEditGearListDialogPositiveClick();
 
         void onEditGearListDialogNegativeClick(DialogFragment dialog);
     }
@@ -85,7 +85,7 @@ public class EditGearListDialogFragment extends DialogFragment {
                             Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
                         }
                     }
-                    mListener.onEditGearListDialogPositiveClick(EditGearListDialogFragment.this);
+                    mListener.onEditGearListDialogPositiveClick();
                 })
                 .setNegativeButton(R.string.button_cancel, (dialog, id) -> mListener.onEditGearListDialogNegativeClick(EditGearListDialogFragment.this));
 
@@ -102,7 +102,7 @@ public class EditGearListDialogFragment extends DialogFragment {
             mListener = (EditGearListDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement AddGearDialogListener");
         }
     }

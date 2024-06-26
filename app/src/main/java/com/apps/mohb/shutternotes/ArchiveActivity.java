@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : ArchiveActivity.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -87,6 +87,7 @@ public class ArchiveActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_archive);
         botNavView = findViewById(R.id.botNavView);
         botNavView.setOnItemSelectedListener(mOnItemSelectedListener);
@@ -104,7 +105,7 @@ public class ArchiveActivity extends AppCompatActivity implements
         listHeader.setClickable(false);
         listFooter.setClickable(false);
 
-        // Define form factor of notes items accorging to screen height in pixels
+        // Define form factor of notes items according to screen height in pixels
         DisplayMetrics metrics = this.getResources().getDisplayMetrics();
         int listItemHeight = (int) (metrics.heightPixels / Constants.LIST_ITEM_HEIGHT_FACTOR);
 
@@ -116,6 +117,20 @@ public class ArchiveActivity extends AppCompatActivity implements
         flickrNotesAdapter = new FlickrNotesListAdapter(getApplicationContext(), archive.getFlickrNotes(), listItemHeight);
         notesListGridView.setAdapter(simpleNotesAdapter);
 
+    }
+
+    private void cancelAllToasts() {
+        try {
+            allNotesRestored.cancel();
+        } catch (Exception e) {
+            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
     }
 
     @Override
@@ -215,7 +230,7 @@ public class ArchiveActivity extends AppCompatActivity implements
 
 
     @Override
-    public void onNoteDeleteDialogPositiveClick(DialogFragment dialog) {
+    public void onNoteDeleteDialogPositiveClick() {
         removeNote(getCorrectPosition(menuInfo.position));
         setAdapter(notesListGridView);
     }
@@ -226,7 +241,7 @@ public class ArchiveActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onDeleteAllNotesDialogPositiveClick(DialogFragment dialog) {
+    public void onDeleteAllNotesDialogPositiveClick() {
         deleteAllNotes();
         setAdapter(notesListGridView);
     }
@@ -238,25 +253,11 @@ public class ArchiveActivity extends AppCompatActivity implements
     }
 
     @Override
-    public void onRestoreAllNotesDialogPositiveClick(DialogFragment dialog) {
+    public void onRestoreAllNotesDialogPositiveClick() {
         restoreAllNotes();
         setAdapter(notesListGridView);
     }
 
-    @Override
-    public void onRestoreAllNotesDialogNegativeClick(DialogFragment dialog) {
-
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        try {
-            allNotesRestored.cancel();
-        } catch (Exception e) {
-            Log.e(Constants.LOG_EXCEPT_TAG, Log.getStackTraceString(e));
-        }
-    }
 
     // CLASS METHODS
 

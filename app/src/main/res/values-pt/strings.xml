@@ -5,8 +5,6 @@
     <string name="navigation_drawer_close">Fechar drawer</string>
     <string name="info_bmc">Me page um café!</string>
     <string name="navigation_drawer_open">Abrir drawer</string>
-    <string name="nav_header_title">Haraldo Albergaria</string>
-    <string name="nav_header_desc">ShutterNotes</string>
     <string name="activity_title_about">Sobre</string>
     <string name="activity_title_help">Ajuda</string>
     <string name="activity_title_settings">Configurações</string>
@@ -19,12 +17,9 @@
     <string name="action_question">Dúvida</string>
     <string name="action_about_application">sobre o aplicativo</string>
     <string name="action_settings">Configurações</string>
-    <string name="action_report_bug">Relatar uma falha</string>
-    <string name="action_website">Website</string>
     <string name="action_material_icons">Atribuição dos recursos gráficos</string>
     <string name="dialog_view_text">texto</string>
     <string name="dialog_view_title">Título</string>
-    <string name="toast_get_help_page">Carregando página de ajuda da internet…</string>
     <string name="nav_menu_simple">Notas Simples</string>
     <string name="nav_menu_gear">Notas de Equipamento</string>
     <string name="nav_menu_flickr">Notas do Flickr</string>
@@ -39,9 +34,6 @@
     <string name="text_hint_simple_note">Escreva aqui sua nota</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_clear">Limpar</string>
-    <string name="activity_title_simple_note_fullscreen">Nota Simples em Tela Cheia</string>
-    <string name="activity_title_gear_note_fullscreen">Nota de Equipamento em Tela Cheia</string>
-    <string name="activity_title_flickr_note_fullscreen">Nota do Flickr em Tela Cheia</string>
     <string name="text_list_gear_note_item">Acessório</string>
     <string name="text_hint_flickr_note_description">Escreva aqui a descrição</string>
     <string name="text_hint_flickr_note_title">Digite aqui o título</string>
@@ -53,8 +45,6 @@
     <string name="activity_title_flickr_notes">Notas do Flickr</string>
     <string name="activity_title_gear_notes">Notas de Equipamento</string>
     <string name="activity_title_simple_notes">Notas Simples</string>
-    <string name="button_exit">Sair</string>
-    <string name="button_save">Salvar</string>
     <string name="alert_message_no_undone">Esta ação não poderá ser desfeita</string>
     <string name="alert_title_delete_note">Excluir nota?</string>
     <string name="alert_button_no">Não</string>
@@ -119,7 +109,6 @@
     <string name="text_type_code">Digite o código aqui</string>
     <string name="button_connect">Conectar Conta</string>
     <string name="button_connecting">Conectando à conta do Flickr…</string>
-    <string name="button_connected">Conta Conectada</string>
     <string name="toast_type_code">Você precisa digitar o código</string>
     <string name="toast_wrong_code">Código errado, tente novamente</string>
     <string name="activity_title_flickr_photosets">Escolher álbum</string>
@@ -168,13 +157,11 @@
     <string name="pref_notif_sound_silent_title">Silencioso</string>
     <string name="notify_channel_description">Mostra o progresso do upload and reabre o aplicativo se clicado</string>
     <string name="notify_channel_name">Upload para o Flickr</string>
-    <string name="toast_file_not_found">Arquivo não encontrado</string>
     <string name="toast_exported">Lista foi exportada!</string>
     <string name="toast_imported">Lista foi importada!</string>
     <string name="alert_title_import_file">Importar arquivo?</string>
     <string name="alert_message_import_file">A lista de acessórios atual será substituída pela lista do arquivo\n</string>
     <string name="toast_empty_list">A lista está vazia</string>
-    <string name="action_export_file_name">lista_de_acessórios.txt</string>
     <string name="toast_browser_not_found">Navegador web não encontrado</string>
 
 </resources>

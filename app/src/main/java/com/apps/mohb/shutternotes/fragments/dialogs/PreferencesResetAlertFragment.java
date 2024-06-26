@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : PreferencesResetAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class PreferencesResetAlertFragment extends DialogFragment {
 
     public interface PreferencesResetDialogListener {
-        void onAlertDialogPositiveClick(DialogFragment dialog);
+        void onAlertDialogPositiveClick();
 
         void onAlertDialogNegativeClick(DialogFragment dialog);
     }
@@ -39,7 +39,7 @@ public class PreferencesResetAlertFragment extends DialogFragment {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(getActivity());
         alertDialogBuilder.setTitle(R.string.alert_title_reset_preferences).setMessage(R.string.alert_message_reset_preferences)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onAlertDialogPositiveClick(PreferencesResetAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onAlertDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onAlertDialogNegativeClick(PreferencesResetAlertFragment.this));
 
         return alertDialogBuilder.create();
@@ -55,7 +55,7 @@ public class PreferencesResetAlertFragment extends DialogFragment {
             mListener = (PreferencesResetDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement PreferencesResetDialogListener");
         }
     }

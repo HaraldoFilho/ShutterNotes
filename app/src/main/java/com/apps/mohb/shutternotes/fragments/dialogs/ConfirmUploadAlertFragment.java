@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : ConfirmUploadAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class ConfirmUploadAlertFragment extends DialogFragment {
 
     public interface ConfirmUploadAlertDialogListener {
-        void onConfirmUploadDialogPositiveClick(DialogFragment dialog);
+        void onConfirmUploadDialogPositiveClick();
 
         void onConfirmUploadDialogNegativeClick(DialogFragment dialog);
     }
@@ -39,7 +39,7 @@ public class ConfirmUploadAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.alert_title_confirm_upload).setMessage(R.string.alert_message_confirm_upload)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onConfirmUploadDialogPositiveClick(ConfirmUploadAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onConfirmUploadDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onConfirmUploadDialogNegativeClick(ConfirmUploadAlertFragment.this));
 
         return builder.create();
@@ -55,7 +55,7 @@ public class ConfirmUploadAlertFragment extends DialogFragment {
             mListener = (ConfirmUploadAlertDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement ConfirmUploadDialogListener");
         }
     }

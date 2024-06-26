@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : GearDeleteAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class GearDeleteAlertFragment extends DialogFragment {
 
     public interface GearDeleteDialogListener {
-        void onGearDeleteDialogPositiveClick(DialogFragment dialog);
+        void onGearDeleteDialogPositiveClick();
 
         void onGearDeleteDialogNegativeClick(DialogFragment dialog);
     }
@@ -38,7 +38,7 @@ public class GearDeleteAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         builder.setTitle(R.string.alert_title_delete_gear).setMessage(R.string.alert_message_no_undone)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onGearDeleteDialogPositiveClick(GearDeleteAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onGearDeleteDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onGearDeleteDialogNegativeClick(GearDeleteAlertFragment.this));
 
         return builder.create();
@@ -54,7 +54,7 @@ public class GearDeleteAlertFragment extends DialogFragment {
             mListener = (GearDeleteDialogListener) context;
         } catch (ClassCastException e) {
             // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement NetworkDeleteDialogListener");
         }
     }

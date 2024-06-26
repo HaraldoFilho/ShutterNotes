@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--Color pallete-->
+    <!--Color palette-->
     <color name="colorPrimary">#148E02</color>
     <color name="colorPrimaryDark">#135C04</color>
     <color name="colorAccent">#148E02</color>
@@ -33,7 +33,7 @@
     <color name="colorBackgroundGearNote">#f7f7f7</color>
     <color name="colorBackgroundPhotosets">#f7f7f7</color>
     <color name="colorBackgroundPhotos">#f7f7f7</color>
-    <color name="colorBackgroudSplash">#ffffff</color>
+    <color name="colorBackgroundSplash">#ffffff</color>
 
     <color name="black_overlay">#66000000</color>
 

@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : SimpleNoteActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -30,6 +30,7 @@ public class SimpleNoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_simple_note);
 
         editText = findViewById(R.id.editTextSimpleNote);
@@ -37,7 +38,7 @@ public class SimpleNoteActivity extends AppCompatActivity {
         Button buttonClear = findViewById(R.id.buttonSimpleNoteClear);
         Button buttonOK = findViewById(R.id.buttonSimpleNoteOk);
 
-        buttonCancel.setOnClickListener(view -> onBackPressed());
+        buttonCancel.setOnClickListener(view -> finish());
 
         buttonClear.setOnClickListener(view -> editText.setText(""));
 
@@ -59,8 +60,12 @@ public class SimpleNoteActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    protected void onPause() {
+        super.onPause();
+        cancelAllToasts();
+    }
+
+    private void cancelAllToasts() {
         try {
             mustType.cancel();
         } catch (Exception e) {

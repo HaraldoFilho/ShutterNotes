@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : RestoreBackupAlertFragment.java
- *  Last modified : 6/17/24, 9:46 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -25,7 +25,7 @@ import com.apps.mohb.shutternotes.R;
 public class RestoreBackupAlertFragment extends DialogFragment {
 
     public interface RestoreBackupAlertDialogListener {
-        void onRestoreBackupDialogPositiveClick(DialogFragment dialog);
+        void onRestoreBackupDialogPositiveClick();
 
         void onRestoreBackupDialogNegativeClick(DialogFragment dialog);
     }
@@ -39,7 +39,7 @@ public class RestoreBackupAlertFragment extends DialogFragment {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle(R.string.alert_title_import_file).setMessage(R.string.alert_message_import_file)
-                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onRestoreBackupDialogPositiveClick(RestoreBackupAlertFragment.this))
+                .setPositiveButton(R.string.alert_button_yes, (dialog, id) -> mListener.onRestoreBackupDialogPositiveClick())
                 .setNegativeButton(R.string.alert_button_no, (dialog, id) -> mListener.onRestoreBackupDialogNegativeClick(RestoreBackupAlertFragment.this));
 
         return builder.create();
@@ -55,7 +55,7 @@ public class RestoreBackupAlertFragment extends DialogFragment {
             mListener = (RestoreBackupAlertDialogListener) context;
         } catch (ClassCastException e) {
             // The context doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
+            throw new ClassCastException(context
                     + " must implement RestoreDialogListener");
         }
     }

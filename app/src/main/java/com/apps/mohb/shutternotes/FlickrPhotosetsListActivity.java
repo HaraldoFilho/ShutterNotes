@@ -5,7 +5,7 @@
  *  Developer     : Haraldo Albergaria
  *
  *  File          : FlickrPhotosetsListActivity.java
- *  Last modified : 6/8/24, 10:58 AM
+ *  Last modified : 6/26/24, 10:14 AM
  *
  *  -----------------------------------------------------------
  */
@@ -81,7 +81,7 @@ public class FlickrPhotosetsListActivity extends BackgroundTaskActivity implemen
 
         } catch (Exception e) {
             Toast.makeText(getBaseContext(), R.string.toast_unable_to_communicate, Toast.LENGTH_SHORT).show();
-            onBackPressed();
+            finish();
         }
 
     }
@@ -113,7 +113,7 @@ public class FlickrPhotosetsListActivity extends BackgroundTaskActivity implemen
     }
 
     @Override
-    public void onConfirmUploadDialogPositiveClick(DialogFragment dialog) {
+    public void onConfirmUploadDialogPositiveClick() {
 
         if (!selectedSetId.isEmpty()) {
             Intent intent = new Intent(getApplicationContext(), FlickrUploadToPhotosActivity.class);
@@ -132,15 +132,15 @@ public class FlickrPhotosetsListActivity extends BackgroundTaskActivity implemen
     }
 
     @Override
-    public void onAuthenticationNeededDialogPositiveClick(DialogFragment dialog) {
+    public void onAuthenticationNeededDialogPositiveClick() {
         Intent intent = new Intent(getApplicationContext(), FlickrAccountActivity.class);
         intent.putExtra(Constants.KEY_CALLER_ACTIVITY, Constants.ACTIVITY_FLICKR_PHOTOSETS);
         startActivity(intent);
     }
 
     @Override
-    public void onAuthenticationNeededDialogNegativeClick(DialogFragment dialog) {
-        onBackPressed();
+    public void onAuthenticationNeededDialogNegativeClick() {
+        finish();
     }
 
     private class GetPhotosets extends BackgroundTask {
