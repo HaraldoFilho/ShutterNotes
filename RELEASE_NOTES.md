@@ -1,3 +1,6 @@
+#### **1.4.3**
+- Fixed crashes when opening any activity.
+
 #### **1.4.2**
 - Changed JDK version from 21 to 17.
 - Updated some dependencies versions.

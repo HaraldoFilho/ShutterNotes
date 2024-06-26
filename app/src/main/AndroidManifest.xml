@@ -27,7 +27,7 @@
         android:label="@string/info_app_name"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.App.Starting"
+        android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,DiscouragedApi,LockedOrientationActivity">
 
 
