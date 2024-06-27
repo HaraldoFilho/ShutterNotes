@@ -6,7 +6,6 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_archive_footer_height"
-        android:id="@+id/viewArchiveFooter" />
+        android:layout_height="@dimen/view_archive_footer_height" />
 
 </LinearLayout>

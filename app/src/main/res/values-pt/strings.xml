@@ -10,13 +10,11 @@
     <string name="activity_title_settings">Configurações</string>
     <string name="version_name">versão:</string>
     <string name="action_terms_of_use">Termos de uso</string>
-    <string name="action_send_feedback">Enviar feedback</string>
     <string name="action_privacy_policy">Política de privacidade</string>
     <string name="action_feedback">Feedback</string>
     <string name="action_send_question">Enviar dúvida</string>
     <string name="action_question">Dúvida</string>
     <string name="action_about_application">sobre o aplicativo</string>
-    <string name="action_settings">Configurações</string>
     <string name="action_material_icons">Atribuição dos recursos gráficos</string>
     <string name="dialog_view_text">texto</string>
     <string name="dialog_view_title">Título</string>
@@ -34,10 +32,8 @@
     <string name="text_hint_simple_note">Escreva aqui sua nota</string>
     <string name="button_cancel">Cancelar</string>
     <string name="button_clear">Limpar</string>
-    <string name="text_list_gear_note_item">Acessório</string>
     <string name="text_hint_flickr_note_description">Escreva aqui a descrição</string>
     <string name="text_hint_flickr_note_title">Digite aqui o título</string>
-    <string name="text_hint_gear_note_title">Digite aqui o título</string>
     <string name="button_show">Mostrar</string>
     <string name="activity_title_note_fullscreen">Nota em Tela Cheia</string>
     <string name="toast_must_type">Você precisa escrever alguma coisa</string>
@@ -49,9 +45,7 @@
     <string name="alert_title_delete_note">Excluir nota?</string>
     <string name="alert_button_no">Não</string>
     <string name="alert_button_yes">Sim</string>
-    <string name="alert_message_delete_all_notes">Todas as notas serão permanentemente excluídas</string>
     <string name="action_add_gear">Adicionar novo equipamento</string>
-    <string name="activity_title_gears_list">Acessórios</string>
     <string name="dialog_add_gear_title">Novo acessório</string>
     <string name="button_reset">Reiniciar</string>
     <string name="nav_menu_archive">Arquivadas</string>
@@ -85,7 +79,6 @@
     <string name="alert_title_archive_selected_notes">Arquivar as notas selecionadas?</string>
     <string name="alert_title_restore_all_notes">Restaurar todas as notas?</string>
     <string name="toast_must_select">Selecione pelo menos uma nota</string>
-    <string name="toast_selected_notes_archived">As notas selecionadas\nforam arquivadas</string>
     <string name="alert_message_restore_all_notes">Todas as notas serão restauradas para o seu local original</string>
     <string name="alert_title_reset_preferences">Restaurar padrões?</string>
     <string name="alert_message_reset_preferences">Todas as configurações serão restauradas para os valores padrão\n</string>
@@ -135,7 +128,6 @@
     <string name="action_sync_clock">Sincronizar relógio</string>
     <string name="alert_title_authenticate">Autenticação necessária!</string>
     <string name="alert_message_authenticate">Você precisa se autenticar no Flickr para fazer upload dos dados. Deseja tentar novamente?</string>
-    <string name="action_help">Ajuda</string>
     <string name="toast_unable_to_communicate">Falha na comunicação com o Flickr</string>
     <string name="toast_location_updated">Localização atualizada!</string>
     <string name="toast_location_not_updated">Não foi possível atualizar a localização</string>
@@ -154,7 +146,6 @@
     <string name="notify_upload_completed">O upload terminou!</string>
     <string name="notify_title">Fazendo upload para o Flickr…</string>
     <string name="pref_title_notif_sound">Som da notificação</string>
-    <string name="pref_notif_sound_silent_title">Silencioso</string>
     <string name="notify_channel_description">Mostra o progresso do upload and reabre o aplicativo se clicado</string>
     <string name="notify_channel_name">Upload para o Flickr</string>
     <string name="toast_exported">Lista foi exportada!</string>

@@ -18,7 +18,6 @@
         android:padding="@dimen/progress_bar_view_padding" >
 
         <TextView
-            android:id="@+id/progressBarTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="@dimen/progress_bar_title_padding_bottom"

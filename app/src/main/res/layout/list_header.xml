@@ -6,7 +6,6 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/view_header_height"
-        android:id="@+id/viewListHeader" />
+        android:layout_height="@dimen/view_header_height" />
 
 </LinearLayout>

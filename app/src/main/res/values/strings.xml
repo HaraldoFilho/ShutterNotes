@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-
     <!--Application name-->
     <string name="app_name" translatable="false">Shutter Notes</string>
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.4.3</string>
-    <string name="version_code" translatable="false">143</string>
+    <string name="version_number" translatable="false">1.4.4</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
@@ -59,7 +57,6 @@
     <string name="activity_title_simple_note">Simple Note</string>
     <string name="activity_title_gear_note">Gear Note</string>
     <string name="activity_title_add_tags">Add Tags</string>
-    <string name="activity_title_gears_list">Accessories</string>
     <string name="activity_title_flickr_note">Flickr Note</string>
     <string name="activity_title_note_fullscreen">Note Fullscreen</string>
     <string name="activity_title_settings">Settings</string>
@@ -70,7 +67,6 @@
     <string name="activity_title_flickr_upload">Upload to Flickr</string>
     <string name="activity_title_clock">Clock</string>
 
-    <string name="action_send_feedback">Send feedback</string>
     <string name="action_send_question">Send question</string>
     <string name="action_terms_of_use">Terms of use</string>
     <string name="action_privacy_policy">Privacy policy</string>
@@ -78,7 +74,6 @@
     <string name="action_feedback">Feedback</string>
     <string name="action_question">Question</string>
     <string name="action_about_application">about application</string>
-    <string name="action_settings">Settings</string>
     <string name="action_add_gear">Add new gearItem</string>
     <string name="action_select_all">Select all</string>
     <string name="action_unselect_all">Unselect all</string>
@@ -92,7 +87,6 @@
     <string name="action_restore_defaults">Restore defaults</string>
     <string name="action_sync_clock">Syncronize clock</string>
     <string name="action_update_location">Update location</string>
-    <string name="action_help">Help</string>
     <string name="action_email" translatable="false">Feedback</string>
 
 
@@ -103,8 +97,6 @@
 
     <!--Text Views-->
     <string name="text_hint_simple_note">Write your note here</string>
-    <string name="text_hint_gear_note_title">Type here the title</string>
-    <string name="text_list_gear_note_item">Accessory</string>
     <string name="text_hint_flickr_note_title">Type here the title</string>
     <string name="text_hint_flickr_note_description">Write here the description</string>
     <string name="text_type_code">Type the code here</string>
@@ -140,7 +132,6 @@
     <string name="alert_message_reset_preferences">All settings will be restored to the default values\n</string>
     <string name="alert_message_no_undone">This action can not be undone\n</string>
     <string name="alert_message_can_be_restored">They will can be restored later\n</string>
-    <string name="alert_message_delete_all_notes">All notes will be permanently deleted\n</string>
     <string name="alert_message_restore_all_notes">All notes will be restored to its original location\n</string>
     <string name="alert_message_confirm_upload">The notes information will be uploaded to the selected photoset. AFTER STARTED, THIS OPERATION WILL CAN NOT BE CANCELED!</string>
     <string name="alert_message_run_background">Do you want to continue the upload in background? You will be notified when it is finished\n</string>
@@ -156,7 +147,6 @@
     <string name="toast_must_select">Select at least one note</string>
     <string name="toast_reordered">The items were reordered</string>
     <string name="toast_all_notes_archived">All notes were archived</string>
-    <string name="toast_selected_notes_archived">The selected notes were archived</string>
     <string name="toast_all_notes_restored">All notes were restored</string>
     <string name="toast_type_code">You need to type the code</string>
     <string name="toast_wrong_code">Wrong code, try again</string>
@@ -198,10 +188,7 @@
     <string name="pref_def_font_size" translatable="false">2</string>
 
     <!-- Notification sound -->
-    <string name="pref_key_notif_sound" translatable="false">NOTIF_SOUND</string>
     <string name="pref_title_notif_sound">Notification sound</string>
-    <string name="pref_notif_sound_silent_value" translatable="false">0</string>
-    <string name="pref_notif_sound_silent_title">Silent</string>
 
 
     <!-- FLICKR NOTES group -->'

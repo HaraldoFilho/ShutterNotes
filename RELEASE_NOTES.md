@@ -1,3 +1,8 @@
+#### **1.4.4**
+- Changed splash screen background color.
+- Moved button images and bmc logo to raw folder.
+- Fixed code inspection warnings.
+
 #### **1.4.3**
 - Fixed crashes when opening any activity.
 

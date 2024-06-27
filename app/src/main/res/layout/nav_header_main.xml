@@ -14,7 +14,6 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="@dimen/nav_header_img_width"
         android:layout_height="@dimen/nav_header_img_height"
         android:paddingTop="@dimen/nav_header_padding"
@@ -26,7 +25,7 @@
         android:paddingStart="@dimen/nav_header_padding"
         android:paddingEnd="@dimen/nav_header_padding"
         android:paddingTop="@dimen/nav_header_padding"
-        android:text="@string/info_app_name"
+        android:text="@string/app_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/colorBlackText"
         android:textSize="@dimen/nav_header_text_size" />

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 
 public class FlickrUploadToPhotosUnitTest {
 
-    FlickrUploadToPhotosActivity activity = new FlickrUploadToPhotosActivity();
+    final FlickrUploadToPhotosActivity activity = new FlickrUploadToPhotosActivity();
 
     @Test
     public void getNumOfPagesTest() {
