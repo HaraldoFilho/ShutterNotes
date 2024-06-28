@@ -28,10 +28,4 @@
         android:title="@string/action_unselect_all"
         app:showAsAction="never" />
 
-<!--    <item-->
-<!--        android:id="@+id/action_help"-->
-<!--        android:orderInCategory="5"-->
-<!--        android:title="@string/action_help"-->
-<!--        app:showAsAction="never" />-->
-
 </menu>

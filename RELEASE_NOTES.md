@@ -1,5 +1,8 @@
+#### **1.4.6**
+- UI improvements.
+
 #### **1.4.5**
-- Minor UI improvement
+- Minor UI improvement.
 
 #### **1.4.4**
 - Changed splash screen background color.

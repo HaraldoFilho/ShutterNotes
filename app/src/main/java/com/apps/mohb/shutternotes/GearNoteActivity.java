@@ -241,9 +241,24 @@ public class GearNoteActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.options_gear_note, menu);
-        MenuItem menuAddGear = menu.findItem(R.id.action_add_gear);
-        menuAddGear.setEnabled(true);
+        menu.findItem(R.id.action_add_gear).setEnabled(true);
         return true;
+    }
+
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        if (!gearList.getList().isEmpty()) {
+            menu.findItem(R.id.action_select_all).setEnabled(true);
+            menu.findItem(R.id.action_delete_all).setEnabled(true);
+            menu.findItem(R.id.action_reorder).setEnabled(true);
+            menu.findItem(R.id.action_export_list).setEnabled(true);
+        } else {
+            menu.findItem(R.id.action_select_all).setEnabled(false);
+            menu.findItem(R.id.action_delete_all).setEnabled(false);
+            menu.findItem(R.id.action_reorder).setEnabled(false);
+            menu.findItem(R.id.action_export_list).setEnabled(false);
+        }
+        return super.onMenuOpened(featureId, menu);
     }
 
     @SuppressLint("NonConstantResourceId")

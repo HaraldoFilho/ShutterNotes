@@ -51,6 +51,8 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
     private AdapterView.AdapterContextMenuInfo menuInfo;
     private MenuItem menuItemUploadToFlickr;
     private MenuItem menuItemArchiveAll;
+    private MenuItem menuItemSelectAll;
+    private MenuItem menuItemUnselectAll;
 
     private int listItemHeight;
 
@@ -185,14 +187,27 @@ public class FlickrNotesListActivity extends AppCompatActivity implements
         getMenuInflater().inflate(R.menu.options_flickr_notes, menu);
         menuItemUploadToFlickr = menu.findItem(R.id.action_upload_to_flickr);
         menuItemArchiveAll = menu.findItem(R.id.action_archive_all);
-        menuItemUploadToFlickr.setEnabled(true);
-        menuItemArchiveAll.setEnabled(true);
-        if (notebook.getFlickrNotes().isEmpty()) {
-            menuItemUploadToFlickr.setEnabled(false);
-            menuItemArchiveAll.setEnabled(false);
-        }
+        menuItemSelectAll = menu.findItem(R.id.action_select_all);
+        menuItemUnselectAll = menu.findItem(R.id.action_unselect_all);
         return true;
     }
+
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        if (!notebook.getFlickrNotes().isEmpty()) {
+            menuItemUploadToFlickr.setEnabled(true);
+            menuItemArchiveAll.setEnabled(true);
+            menuItemSelectAll.setEnabled(true);
+            menuItemUnselectAll.setEnabled(true);
+        } else {
+            menuItemUploadToFlickr.setEnabled(false);
+            menuItemArchiveAll.setEnabled(false);
+            menuItemSelectAll.setEnabled(false);
+            menuItemUnselectAll.setEnabled(false);
+        }
+        return super.onMenuOpened(featureId, menu);
+    }
+
 
     @SuppressLint("NonConstantResourceId")
     @Override
