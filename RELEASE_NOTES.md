@@ -1,3 +1,6 @@
+#### **1.4.5**
+- Minor UI improvement
+
 #### **1.4.4**
 - Changed splash screen background color.
 - Moved button images and bmc logo to raw folder.

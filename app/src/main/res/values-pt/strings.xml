@@ -36,7 +36,7 @@
     <string name="text_hint_flickr_note_title">Digite aqui o título</string>
     <string name="button_show">Mostrar</string>
     <string name="activity_title_note_fullscreen">Nota em Tela Cheia</string>
-    <string name="toast_must_type">Você precisa escrever alguma coisa</string>
+    <string name="toast_must_type">Você precisa escrever algo</string>
     <string name="toast_must_type_title">Você precisa colocar um título</string>
     <string name="activity_title_flickr_notes">Notas do Flickr</string>
     <string name="activity_title_gear_notes">Notas de Equipamento</string>
@@ -49,7 +49,7 @@
     <string name="dialog_add_gear_title">Novo acessório</string>
     <string name="button_reset">Reiniciar</string>
     <string name="nav_menu_archive">Arquivadas</string>
-    <string name="toast_must_pickup">Escolha pelo menos um acessório</string>
+    <string name="toast_must_pickup">Escolha ao menos um acessório</string>
     <string name="context_archive">Arquivar</string>
     <string name="context_delete">Excluir</string>
     <string name="context_edit">Editar</string>
@@ -78,7 +78,7 @@
     <string name="alert_title_archive_all_notes">Arquivar todas as notas</string>
     <string name="alert_title_archive_selected_notes">Arquivar as notas selecionadas?</string>
     <string name="alert_title_restore_all_notes">Restaurar todas as notas?</string>
-    <string name="toast_must_select">Selecione pelo menos uma nota</string>
+    <string name="toast_must_select">Selecione ao menos uma nota</string>
     <string name="alert_message_restore_all_notes">Todas as notas serão restauradas para o seu local original</string>
     <string name="alert_title_reset_preferences">Restaurar padrões?</string>
     <string name="alert_message_reset_preferences">Todas as configurações serão restauradas para os valores padrão\n</string>
