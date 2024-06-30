@@ -1,3 +1,6 @@
+#### **1.4.7**
+- Updated app launcher icons.
+
 #### **1.4.6**
 - UI improvements.
 
