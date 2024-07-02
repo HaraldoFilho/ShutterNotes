@@ -1,3 +1,7 @@
+#### **1.4.8**
+- Changed app icon size on About screen.
+- Added more instructions for Gear Notes in the help page.
+
 #### **1.4.7**
 - Updated app launcher icons.
 
