@@ -1,3 +1,6 @@
+#### **1.4.9**
+- Changed font style of the app name on navigation drawer to bold.
+
 #### **1.4.8**
 - Changed app icon size on About screen.
 - Added more instructions for Gear Notes in the help page.
