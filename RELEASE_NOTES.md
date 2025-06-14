@@ -1,3 +1,12 @@
+#### **1.5.2**
+- Changed website and e-mail adresses.
+
+#### **1.5.1**
+- Fixed missing groups on navigation drawer.
+
+#### **1.5.0**
+- Decreased font size of the app name on navigation drawer.
+
 #### **1.4.9**
 - Changed font style of the app name on navigation drawer to bold.
 

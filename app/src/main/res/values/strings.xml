@@ -6,13 +6,13 @@
 
     <!--Application version-->
     <string name="version_name">version: </string>
-    <string name="version_number" translatable="false">1.5.1</string>
+    <string name="version_number" translatable="false">1.5.2</string>
 
     <!--Application information-->
     <string name="info_app_name" translatable="false">Shutter Notes</string>
-    <string name="info_feedback_email" translatable="false">feedback@shutternotes.app</string>
-    <string name="info_help_email" translatable="false">help@shutternotes.app</string>
-    <string name="info_copyright_text" translatable="false">Copyright © 2024 Haraldo Albergaria</string>
+    <string name="info_feedback_email" translatable="false">haraldo.albergaria@gmail.com</string>
+    <string name="info_help_email" translatable="false">haraldo.albergaria@gmail.com</string>
+    <string name="info_copyright_text" translatable="false">Copyright © 2025 Haraldo Albergaria</string>
     <string name="info_rights_reserved_text">All Rights Reserved.</string>
     <string name="info_bmc">Buy me a coffee!</string>
 
@@ -173,7 +173,7 @@
     <string name="notify_updated">updated</string>
 
     <!--Help page-->
-    <string name="url_website" translatable="false">https://shutternotes.app/</string>
+    <string name="url_website" translatable="false">https://shutternotes.github.io/</string>
     <string name="url_help" translatable="false">help/</string>
 
     <!-- Settings -->
